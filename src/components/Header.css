@@ -1,0 +1,150 @@
+.wrap_header {
+  display: flex;
+  height: 37px;
+  background: #f5f8fa;
+}
+
+.menu_list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0px 20px 0 20px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #747c87;
+}
+
+.submenu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0px 20px 0 20px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #747c87;
+  border-right: 1px solid #e0e2e5;
+}
+
+.submenu:hover {
+  cursor: pointer;
+}
+
+.focused {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.submenu:nth-child(4) {
+  border: none;
+}
+
+.wrap_container {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e2e5;
+}
+
+.left_nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav_list:nth-child(1) {
+  padding: 0 50px 0px 20px;
+}
+
+.nav_list_logo {
+  color: #5433d4;
+}
+
+.nav_list_logo_txt {
+  padding: 10px;
+  font-size: 25px;
+  color: #5433d4;
+}
+
+.navmenu {
+  height: 100%;
+  padding: 0px 20px 0px 20px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 64px;
+  color: #222222;
+}
+
+.navmenu:hover {
+  cursor: pointer;
+}
+
+.focused_nav {
+  cursor: pointer;
+  border-bottom: 2px solid #222222;
+}
+
+.search_bar {
+  width: 320px;
+  height: 36px;
+  background: #f5f8fa;
+  border: 1px solid rgba(117, 126, 137, 0.3);
+  border-radius: 17px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search_bar_logo {
+  padding: 0 12px;
+  display: flex;
+  color: #757e89;
+  font-size: 20px;
+}
+
+.search_bar_txt {
+  width: 210px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  border: none;
+  background-color: #f5f8fa;
+}
+
+.search_bar_txt:focus {
+  outline: none;
+}
+
+.right_nav {
+  display: flex;
+}
+
+.nav_login {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  padding: 12px 18px 12px 18px;
+}
+
+.nav_signup {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 12px 18px 12px 18px;
+  width: 90px;
+  background: #757e89;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-right: 30px;
+}

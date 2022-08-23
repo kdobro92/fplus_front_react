@@ -1,0 +1,73 @@
+.wrap_filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 40px 0;
+}
+
+.wrap {
+  width: 1920px;
+}
+
+.filter_list {
+  margin-left: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.btn_list {
+  border: none;
+  background-color: #ffffff;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #757e89;
+}
+
+.btn_list:not(:nth-child(1)):hover {
+  cursor: pointer;
+}
+
+.btn_list:nth-child(2) {
+  padding: 0 18px 0 18px;
+}
+
+.btn_list:nth-child(4) {
+  padding: 0 18px 0 18px;
+}
+
+.btn_list:nth-child(6) {
+  padding: 0 18px 0 18px;
+}
+
+.wrap_post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.post_container {
+  height: 100%;
+  width: 1920px;
+  display: flex;
+  justify-content: center;
+}
+
+.post_list {
+  display: flex;
+  justify-content: center;
+  width: 344px;
+  height: 344px;
+  border-radius: 4px;
+}
+
+hr {
+  display: inline-block;
+  height: 16px;
+  width: 2px;
+  border-width: 0;
+  background-color: #757e89;
+}

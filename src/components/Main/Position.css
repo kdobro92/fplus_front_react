@@ -1,0 +1,23 @@
+.wrap_position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.posi_devi {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #222222;
+  padding-bottom: 10px;
+}
+
+.posi_intro {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 53px;
+  color: #222222;
+}

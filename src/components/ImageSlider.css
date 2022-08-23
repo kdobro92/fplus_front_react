@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  height: 450px;
+}
+.wrap_thumbnail {
+  width: 1920px;
+}
+
+.dots_custom {
+  display: inline-block;
+  text-align: center;
+  margin: auto 0;
+  padding: 10px 0 10px 0;
+}
+
+.dots_custom li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 12px 12px;
+  padding: 0;
+}
+
+.dots_custom li button {
+  border: none;
+  background: #d1d1d1;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  width: 14px;
+  border-radius: 100%;
+  padding: 0;
+}
+
+.dots_custom li.slick-active button {
+  background-color: #5433d4;
+}

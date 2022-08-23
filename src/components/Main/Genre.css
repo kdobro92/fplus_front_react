@@ -1,0 +1,17 @@
+.wrap_genre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genre_list {
+  display: flex;
+  justify-content: center;
+  width: 245px;
+  height: 110px;
+  border-radius: 4px;
+}
+
+img {
+  margin-right: 12px;
+}
