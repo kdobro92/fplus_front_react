@@ -2,15 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0 40px 0;
+  padding: 40px 0 30px 0;
 }
 
-.wrap {
-  width: 1920px;
+.filter_container {
+  width: 1780px;
 }
 
 .filter_list {
-  margin-left: 56px;
   display: flex;
   align-items: center;
 }
@@ -42,32 +41,113 @@
   padding: 0 18px 0 18px;
 }
 
+hr {
+  display: inline-block;
+  height: 12px;
+  width: 1px;
+  border-width: 0;
+  background-color: #757e89;
+}
+
 .wrap_post {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
 }
 
 .post_container {
-  height: 100%;
-  width: 1920px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  width: 1804px;
 }
 
 .post_list {
-  display: flex;
-  justify-content: center;
-  width: 344px;
-  height: 344px;
-  border-radius: 4px;
+  width: 340px;
+  height: 500px;
+  margin: 12px;
 }
 
-hr {
-  display: inline-block;
-  height: 16px;
-  width: 2px;
-  border-width: 0;
-  background-color: #757e89;
+.post_img_container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 340px;
+}
+
+.post_img {
+  width: 340px;
+  height: 100%;
+  border-radius: 8px;
+  transform: translate(1.1);
+  transition: 0.5s;
+}
+
+.post_img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.wrap_top {
+  display: flex;
+  align-items: center;
+}
+
+.post_name {
+  padding: 16px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #222222;
+}
+
+.post_name:hover {
+  cursor: pointer;
+}
+
+.post_type {
+  padding: 16px;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #757e89;
+}
+
+.post_txt {
+  padding: 16px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+  text-align: center;
+}
+
+.post_txt:hover {
+  cursor: pointer;
+}
+
+.post_tag {
+  float: right;
+  width: 44px;
+  height: 24px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  border: 1px solid rgba(84, 51, 212, 0.8);
+  color: rgba(84, 51, 212, 0.8);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

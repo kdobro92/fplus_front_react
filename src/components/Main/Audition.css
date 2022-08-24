@@ -1,0 +1,178 @@
+.wrap_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  margin-bottom: 24px;
+}
+
+.card_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1804px;
+  height: 400px;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 336px;
+  height: 100%;
+}
+
+.card_whole {
+  position: relative;
+  justify-content: center;
+  border: 1px solid #f5f8fa;
+  width: 100%;
+  height: 100%;
+  margin: 12px;
+}
+
+.card_top {
+  height: 50%;
+}
+
+.card_middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  margin: 4px;
+}
+
+.card_bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.card_title {
+  padding-top: 44px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.card_content {
+  padding-top: 6px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #757e89;
+}
+
+.card_tag {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #5433d4;
+  color: #5433d4;
+  border-radius: 16px;
+  width: 52px;
+  height: 24px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.card_date {
+  margin-top: 38px;
+  padding: 0 24px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+}
+
+.card_detail {
+  flex: 1;
+  margin-top: 38px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  background-color: #ffffff;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #757e89;
+}
+
+.card_img {
+  position: relative;
+  width: 324px;
+  height: 190px;
+  margin: 4px;
+  border-radius: 4px;
+}
+
+.card_new {
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  width: 60px;
+  height: 28px;
+  background: #5433d4;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_limit {
+  position: absolute;
+  left: 80px;
+  top: 16px;
+  width: 84px;
+  height: 28px;
+  background: #ff7235;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_circle {
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  left: 37.39%;
+  right: 38.39%;
+  top: 37.84%;
+  bottom: 42.61%;
+  background-color: #ffffff;
+  border: 4px solid #ffffff;
+  border-radius: 50px;
+}
+
+.circle_img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50px;
+}

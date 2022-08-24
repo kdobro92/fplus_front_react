@@ -1,9 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-array-index-key */
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { useState } from 'react';
 import './Genre.css';
-// import Slider from 'react-slick';
 
 function Genre() {
   const genreArr = [
@@ -16,14 +13,26 @@ function Genre() {
     { text: '가수', image: 'img/singer.png' },
   ];
 
+  const [isFocused, setIsFocused] = useState(false);
+
+  const clickHandler = () => {
+    setIsFocused(!isFocused);
+  };
+
   return (
     <div className="wrap_genre">
-      <div className="genre_list">
+      <div className="genre_container">
         {genreArr.map((data, index) => (
-          <div className="genre_container" key={index}>
+          <button
+            type="button"
+            key={index}
+            className="genre_list"
+            aria-hidden="true"
+            onClick={clickHandler}
+          >
+            <img className="genre_img" src={data.image} alt="genre" />
             <div className="genre_txt">{data.text}</div>
-            <img key={index} src={data.image} alt="genre" />
-          </div>
+          </button>
         ))}
       </div>
     </div>

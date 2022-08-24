@@ -1,0 +1,10 @@
+.wrap_midBanner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.midBanner_container {
+  width: 1966px;
+  height: 346px;
+}

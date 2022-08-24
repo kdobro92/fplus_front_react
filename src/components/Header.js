@@ -7,7 +7,7 @@ import './Header.css';
 
 function Header() {
   const menuArr = [
-    { name: 'FPLUS', content: '' },
+    { name: <img src="img/fplus_logo2.png" alt="logo" />, content: '' },
     { name: '프리랜서 코리아', content: '' },
     { name: 'FPLUS 클래스', content: '' },
   ];
@@ -50,8 +50,11 @@ function Header() {
         <div className="left_nav">
           <Link to="/">
             <li className="nav_list">
-              <FaRegSmileWink className="nav_list_logo" />
-              <span className="nav_list_logo_txt">FPLUS</span>
+              <img
+                src="img/fplus_logo.png"
+                className="nav_list_logo_txt"
+                alt="logo"
+              />
             </li>
           </Link>
           {menuList.map((el, index) => (
@@ -78,6 +81,15 @@ function Header() {
           />
         </div> */}
         <div className="right_nav">
+          <button type="button" className="icon_btn">
+            <img src="img/upload.png" alt="alert" />
+          </button>
+          <button type="button" className="icon_btn">
+            <img src="img/alert.png" alt="alert" />
+          </button>
+          <button type="button" className="icon_btn">
+            <img src="img/message.png" alt="alert" />
+          </button>
           <Link to="/login">
             <li className="nav_login">로그인</li>
           </Link>

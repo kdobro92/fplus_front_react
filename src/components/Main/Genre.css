@@ -4,14 +4,44 @@
   align-items: center;
 }
 
-.genre_list {
+.genre_container {
   display: flex;
   justify-content: center;
-  width: 245px;
+  align-items: center;
+  width: 1800px;
+}
+
+.genre_list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 244px;
   height: 110px;
+  border-radius: 4px;
+  margin: 6px;
+}
+
+.genre_list:hover {
+  cursor: pointer;
+}
+
+.genre_img {
   border-radius: 4px;
 }
 
-img {
-  margin-right: 12px;
+.genre_img:focus {
+  mask-image: linear-gradient(transparent 5%, black 100%);
+}
+
+.genre_txt {
+  position: absolute;
+  width: 100px;
+  height: 23px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
 }

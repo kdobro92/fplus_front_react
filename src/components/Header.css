@@ -57,8 +57,12 @@
   align-items: center;
 }
 
+.nav_list {
+  padding: 0 60px 0 50px;
+}
+
 .nav_list:nth-child(1) {
-  padding: 0 50px 0px 20px;
+  padding: 0 50px 0px 50px;
 }
 
 .nav_list_logo {
@@ -126,7 +130,20 @@
 }
 
 .right_nav {
+  width: 440px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon_btn {
+  border: none;
+  background-color: #ffffff;
+  padding: 0 20px;
+}
+
+.icon_btn:hover {
+  cursor: pointer;
 }
 
 .nav_login {
@@ -142,9 +159,9 @@
   font-size: 14px;
   line-height: 18px;
   padding: 12px 18px 12px 18px;
-  width: 90px;
   background: #757e89;
   border-radius: 20px;
   color: #ffffff;
   margin-right: 30px;
+  text-align: center;
 }
