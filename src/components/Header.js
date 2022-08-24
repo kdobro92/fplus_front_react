@@ -82,13 +82,13 @@ function Header() {
         </div> */}
         <div className="right_nav">
           <button type="button" className="icon_btn">
-            <img src="img/upload.png" alt="alert" />
+            <img src="img/upload.png" alt="upload" />
           </button>
           <button type="button" className="icon_btn">
             <img src="img/alert.png" alt="alert" />
           </button>
           <button type="button" className="icon_btn">
-            <img src="img/message.png" alt="alert" />
+            <img src="img/message.png" alt="message" />
           </button>
           <Link to="/login">
             <li className="nav_login">로그인</li>
