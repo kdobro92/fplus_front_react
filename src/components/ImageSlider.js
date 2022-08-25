@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.css';
 import Slider from 'react-slick';
 
+// main image
 const images = [
   'img/main1.png',
   'img/main2.png',
