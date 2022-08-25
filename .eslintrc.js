@@ -14,6 +14,9 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'off',
+    'react/prop-types': 'off',
+    'no-param-reassign': [2, { props: false }],
+    // 'import/prefer-default-export': off,
   },
   settings: {
     resolver: {

@@ -154,6 +154,10 @@
   padding: 12px 18px 12px 18px;
 }
 
+.nav_login:hover {
+  cursor: pointer;
+}
+
 .nav_signup {
   font-weight: 400;
   font-size: 14px;

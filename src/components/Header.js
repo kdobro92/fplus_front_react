@@ -3,9 +3,16 @@
 import { FaRegSmileWink } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Login from './Login';
 import './Header.css';
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const modalHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   const menuArr = [
     { name: <img src="img/fplus_logo2.png" alt="logo" />, content: '' },
     { name: '프리랜서 코리아', content: '' },
@@ -90,9 +97,10 @@ function Header() {
           <button type="button" className="icon_btn">
             <img src="img/message.png" alt="alert" />
           </button>
-          <Link to="/login">
-            <li className="nav_login">로그인</li>
-          </Link>
+          {isOpen ? <Login /> : null}
+          <li className="nav_login" onClick={modalHandler} aria-hidden="true">
+            로그인
+          </li>
           <Link to="/signup">
             <li className="nav_signup">회원가입</li>
           </Link>
