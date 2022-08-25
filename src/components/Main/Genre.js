@@ -1,78 +1,133 @@
 /* eslint-disable react/no-array-index-key */
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-// import { useState } from 'react';
 import './Genre.css';
 
 function Genre() {
-  // const genreArr = [
-  //   { text: '전체분야', image: 'img/total.png' },
-  //   { text: '연극', image: 'img/theater.png' },
-  //   { text: '영화', image: 'img/movie.png' },
-  //   { text: '뮤지컬', image: 'img/musical.png' },
-  //   { text: 'TV방송', image: 'img/tv.png' },
-  //   { text: '인터넷플랫폼', image: 'img/platform.png' },
-  //   { text: '가수', image: 'img/singer.png' },
-  // ];
-
   const handleDragStart = (e) => e.preventDefault();
 
   const items = [
-    <img
-      src="img/total.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/theater.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/movie.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/musical.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/tv.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/platform.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
-    <img
-      src="img/singer.png"
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt="img"
-    />,
+    <div className="wrap_container">
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/total.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">전체분야</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/theater.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">연극</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/movie.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">영화</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/musical.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">뮤지컬</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/theater.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">TV방송</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/tv.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">인터넷플랫폼</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/platform.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">가수</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/singer.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">스텝</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/theater.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">인터넷플랫폼</div>
+      </div>
+      <div className="wrap_genre">
+        <img
+          className="genre_img"
+          src="img/theater.png"
+          onDragStart={handleDragStart}
+          role="presentation"
+          alt="img"
+        />
+        <div className="genre_txt">인터넷플랫폼</div>
+      </div>
+    </div>,
   ];
-  const responsive = {
-    0: { items: 1 },
-    1024: { items: 7 },
-  };
-  // const [isFocused, setIsFocused] = useState(false);
 
-  // const clickHandler = () => {
-  //   setIsFocused(!isFocused);
-  // };
+  const responsive = {
+    0: {
+      items: 2,
+    },
+    1024: {
+      items: 11,
+    },
+  };
 
   return (
-    <AliceCarousel mouseTracking items={items} responsive={responsive} />
+    <AliceCarousel
+      mouseTracking
+      items={items}
+      disableDotsControls
+      disableButtonsControls
+      responsive={responsive}
+    />
     // <div className="wrap_genre">
     //   <div className="genre_container">
     //     {genreArr.map((data, index) => (
@@ -90,7 +145,6 @@ function Genre() {
     //           onDragStart={handleDragStart}
     //           role="presentation"
     //         />
-    //         <div className="genre_txt">{data.text}</div>
     //       </button>
     //     ))}
     //   </div>

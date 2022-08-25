@@ -1,43 +1,46 @@
+.wrap_container {
+  height: 100%;
+}
+
 .wrap_genre {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 8px;
+  width: 240px;
 }
 
-.genre_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1800px;
+.alice-carousel {
+  width: 1804px;
 }
 
-.genre_list {
+.alice-carousel__stage-item {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 244px;
+  border-radius: 12px;
+  width: 240px;
   height: 110px;
-  border-radius: 4px;
-  margin: 6px;
+  border-radius: 8px;
+  padding: 0 0 0 10px;
 }
 
-.genre_list:hover {
+.alice-carousel__stage-item:nth-last-child(1) {
+}
+
+.alice-carousel__stage-item:hover {
   cursor: pointer;
 }
 
 .genre_img {
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-.genre_img:focus {
-  mask-image: linear-gradient(transparent 5%, black 100%);
+.alice-carousel__prev-btn {
+}
+.alice-carousel__next-btn {
 }
 
 .genre_txt {
   position: absolute;
-  width: 100px;
-  height: 23px;
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 500;

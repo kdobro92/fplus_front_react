@@ -97,7 +97,7 @@ function Header() {
           <button type="button" className="icon_btn">
             <img src="img/message.png" alt="message" />
           </button>
-          {isOpen ? <Login /> : null}
+          {isOpen ? <Login modalHandler={modalHandler} /> : null}
           <li className="nav_login" onClick={modalHandler} aria-hidden="true">
             로그인
           </li>
