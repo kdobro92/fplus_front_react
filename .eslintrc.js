@@ -16,7 +16,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'react/prop-types': 'off',
     'no-param-reassign': [2, { props: false }],
-    // 'import/prefer-default-export': off,
   },
   settings: {
     resolver: {

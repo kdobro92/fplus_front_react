@@ -1,0 +1,21 @@
+.filter_container {
+  border: 1px solid black;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap_fil {
+  display: flex;
+  width: 1760px;
+}
+.filter_left {
+  flex: 8;
+  height: 100%;
+}
+
+.filter_right {
+  height: 100%;
+  flex: 2;
+}

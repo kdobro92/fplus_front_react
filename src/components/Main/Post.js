@@ -125,11 +125,9 @@ function Post() {
             <button type="button" className="btn_list">
               관심순
             </button>
-            <hr />
             <button type="button" className="btn_list">
               인기순
             </button>
-            <hr />
             <button type="button" className="btn_list">
               최신순
             </button>
@@ -142,6 +140,9 @@ function Post() {
             <div className="post_list" key={index}>
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
+                <button type="button" className="heart_btn">
+                  123
+                </button>
               </div>
               <div className="wrap_top">
                 <li className="post_name">{data.name}</li>
@@ -159,6 +160,9 @@ function Post() {
             <div className="post_list" key={index}>
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
+                <button type="button" className="heart_btn">
+                  12
+                </button>
               </div>
               <div className="wrap_top">
                 <li className="post_name">{data.name}</li>

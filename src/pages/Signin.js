@@ -1,11 +1,14 @@
-import './Login.css';
+import './Signin.css';
 
-function Login({ modalHandler }) {
+function Signin({ modalHandler }) {
+  // const [userId, setUserId] = useState('');
+  // const [userPw, setUserPw] = useState('');
+
   return (
     <div className="modal_background">
       <div className="modal_container">
         <div className="modal_header">
-          <img className="login_img" src="img/3d.png" alt="close" />
+          <img className="login_img" src="img/login.png" alt="login" />
           <img
             className="close_btn"
             src="img/close.png"
@@ -64,4 +67,4 @@ function Login({ modalHandler }) {
   );
 }
 
-export default Login;
+export default Signin;

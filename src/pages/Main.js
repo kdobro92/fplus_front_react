@@ -4,6 +4,7 @@ import Genre from '../components/Main/Genre';
 import Post from '../components/Main/Post';
 import Audition from '../components/Main/Audition';
 import MidBanner from '../components/Main/MidBanner';
+import Muse from './Muse';
 
 function Main() {
   return (
@@ -14,6 +15,7 @@ function Main() {
       <Post />
       <MidBanner />
       <Audition />
+      <Muse />
     </>
   );
 }
