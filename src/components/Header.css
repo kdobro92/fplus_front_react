@@ -1,3 +1,6 @@
+.menu_txt {
+  color: #000000;
+}
 .header_container {
   position: fixed;
   width: 100%;
@@ -17,7 +20,6 @@
   width: 80px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   position: relative;
 }
 

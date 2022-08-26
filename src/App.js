@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './pages/Main';
 import Muse from './pages/Muse';
+import Audition from './pages/Audition';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import './App.css';
@@ -14,8 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/muse" element={<Muse />} />
+        <Route path="/audition" element={<Audition />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        {/* <Redirect from="*" to="/" /> */}
       </Routes>
       <Footer />
     </>

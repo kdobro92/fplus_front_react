@@ -2,9 +2,6 @@
 import { FaRegSmileWink } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-// import Main from '../pages/Main';
-import Muse from '../pages/Muse';
-import Audition from '../pages/Audition';
 import Signin from '../pages/Signin';
 import './Header.css';
 
@@ -29,11 +26,11 @@ function Header() {
     },
   ];
 
-  const menuList = [
-    { name: '홈', content: '' },
-    { name: 'MUSE', content: <Muse /> },
-    { name: '오디션', content: <Audition /> },
-  ];
+  // const menuList = [
+  //   { name: '홈', content: '' },
+  //   { name: 'MUSE', content: <Muse /> },
+  //   { name: '오디션', content: <Audition /> },
+  // ];
 
   const [currentTab, setCurrentTab] = useState(0);
   const [currentNav, setCurrentNav] = useState(0);
@@ -45,6 +42,23 @@ function Header() {
   const selectNavHandler = (index) => {
     setCurrentNav(index);
   };
+  const data = [
+    <Link to="/">
+      <div className="menu_txt">홈</div>
+    </Link>,
+    <Link to="/muse">
+      <div className="menu_txt">MUSE</div>
+    </Link>,
+    <Link to="/audition">
+      <div className="menu_txt">오디션</div>
+    </Link>,
+  ];
+
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   location.reload('/');
+  // });
 
   return (
     <div>
@@ -80,7 +94,20 @@ function Header() {
                 />
               </li>
             </Link>
-            {menuList.map((menu, index) => (
+            {data.map((menu, index) => (
+              <li
+                key={index}
+                className={
+                  currentNav === index ? 'navmenu focused_nav' : 'navmenu'
+                }
+                onClick={() => selectNavHandler(index)}
+                aria-hidden="true"
+              >
+                {menu}
+              </li>
+            ))}
+
+            {/* {menuList.map((menu, index) => (
               <li
                 key={index}
                 className={
@@ -91,7 +118,7 @@ function Header() {
               >
                 {menu.name}
               </li>
-            ))}
+            ))} */}
           </div>
           <div className="right_nav">
             <button type="button" className="icon_btn">
@@ -112,9 +139,6 @@ function Header() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="desc">
-        <p>{menuList[currentNav].content}</p>
       </div>
     </div>
   );
