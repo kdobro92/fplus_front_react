@@ -1,3 +1,4 @@
+// eslint-disable-next-line object-curly-newline
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -18,7 +19,6 @@ function App() {
         <Route path="/audition" element={<Audition />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-        {/* <Redirect from="*" to="/" /> */}
       </Routes>
       <Footer />
     </>

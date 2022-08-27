@@ -42,15 +42,22 @@ function Header() {
   const selectNavHandler = (index) => {
     setCurrentNav(index);
   };
+
   const data = [
     <Link to="/">
-      <div className="menu_txt">홈</div>
+      <div className="wrap_menu">
+        <p className="menu_txt">홈</p>
+      </div>
     </Link>,
     <Link to="/muse">
-      <div className="menu_txt">MUSE</div>
+      <div className="wrap_menu">
+        <p className="menu_txt">MUSE</p>
+      </div>
     </Link>,
     <Link to="/audition">
-      <div className="menu_txt">오디션</div>
+      <div className="wrap_menu">
+        <p className="menu_txt">오디션</p>
+      </div>
     </Link>,
   ];
 
@@ -78,7 +85,7 @@ function Header() {
             </li>
           ))}
         </div>
-        <div className="wrap_container">
+        <div className="wrap_left_nav">
           <div className="left_nav">
             <Link to="/">
               <li className="nav_list">
