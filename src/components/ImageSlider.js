@@ -3,18 +3,19 @@
 /* eslint-disable no-unreachable */
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './ImageSlider.css';
 import Slider from 'react-slick';
+import './ImageSlider.css';
 
 // main image
-const images = [
-  'img/main1.png',
-  'img/main2.png',
-  'img/main3.png',
-  'img/main4.png',
-];
 
 function ImageSlider() {
+  const images = [
+    'img/main1.png',
+    'img/main2.png',
+    'img/main3.png',
+    'img/main4.png',
+  ];
+
   const settings = {
     dots: true,
     infinite: true,
