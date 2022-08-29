@@ -1,0 +1,63 @@
+.wrap_signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 142px;
+}
+
+.signup_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 1920px;
+  height: 90px;
+}
+
+.menu_text {
+  position: absolute;
+  left: 72px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #757e89;
+}
+
+.mid_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid_row ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+  height: 100%;
+  border: 1px solid red;
+}
+
+.num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  background-color: #5433d4;
+  color: #ffffff;
+}
+
+.wrap_signup input {
+  width: 248px;
+  height: 50px;
+  border: 1px solid #747c87;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.change {
+  color: blue;
+}

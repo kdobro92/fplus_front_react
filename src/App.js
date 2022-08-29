@@ -6,7 +6,7 @@ import Main from './pages/Main';
 import Muse from './pages/Muse';
 import Audition from './pages/Audition';
 import Signin from './pages/Signin';
-import Signup from './pages/Signup';
+import Signup from './pages/Signup/Signup';
 import './App.css';
 
 function App() {

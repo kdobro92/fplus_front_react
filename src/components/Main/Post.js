@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+import { useState } from 'react';
 import './Post.css';
 
 function Post() {
@@ -114,6 +115,14 @@ function Post() {
     },
   ];
 
+  const [like, setLike] = useState(false);
+  const [currentHeart, setCurrentHeart] = useState();
+
+  const clickHeartHandler = (index) => {
+    setLike(!like);
+    setCurrentHeart(index);
+  };
+
   return (
     <>
       <div className="wrap_filter">
@@ -140,8 +149,19 @@ function Post() {
             <div className="post_list" key={index}>
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
-                <button type="button" className="heart_btn">
-                  123
+                <button
+                  type="button"
+                  className="heart_btn"
+                  onClick={() => clickHeartHandler(index)}
+                >
+                  <img
+                    src={
+                      like && currentHeart === index
+                        ? 'img/heart_red.png'
+                        : 'img/heart.png'
+                    }
+                    alt="heart"
+                  />
                 </button>
               </div>
               <div className="wrap_top">
@@ -160,8 +180,19 @@ function Post() {
             <div className="post_list" key={index}>
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
-                <button type="button" className="heart_btn">
-                  12
+                <button
+                  type="button"
+                  className="heart_btn"
+                  onClick={() => clickHeartHandler(index)}
+                >
+                  <img
+                    src={
+                      like && currentHeart === index
+                        ? 'img/heart_red.png'
+                        : 'img/heart.png'
+                    }
+                    alt="heart"
+                  />
                 </button>
               </div>
               <div className="wrap_top">
@@ -177,9 +208,23 @@ function Post() {
       <div className="wrap_post">
         <div className="post_container">
           {postArr3.map((data, index) => (
-            <div className="post_list" key={index}>
+            <div key={index} className="post_list">
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
+                <button
+                  type="button"
+                  className="heart_btn"
+                  onClick={() => clickHeartHandler(index)}
+                >
+                  <img
+                    src={
+                      like && currentHeart === index
+                        ? 'img/heart_red.png'
+                        : 'img/heart.png'
+                    }
+                    alt="heart"
+                  />
+                </button>
               </div>
               <div className="wrap_top">
                 <li className="post_name">{data.name}</li>

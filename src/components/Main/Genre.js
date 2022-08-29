@@ -8,52 +8,90 @@ function Genre() {
   const handleDragStart = (e) => e.preventDefault();
 
   const items = [
-    <img
-      src="/img/total.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/theater.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/movie.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/musical.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img src="img/tv.png" onDragStart={handleDragStart} alt="presentation" />,
-    <img
-      src="img/platform.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/singer.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/singer.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/singer.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
-    <img
-      src="img/singer.png"
-      onDragStart={handleDragStart}
-      alt="presentation"
-    />,
+    <div className="genre_list">
+      <img
+        src="/img/total.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">전체분야</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/theater.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">연극</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/movie.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">영화</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/musical.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">뮤지컬</p>
+    </div>,
+    <div className="genre_list">
+      <img src="/img/tv.png" onDragStart={handleDragStart} alt="presentation" />
+      <p className="genre_txt">TV방송</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/platform.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">인터넷플랫폼</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/singer.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">가수</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/total.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">전체분야</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/total.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">가수</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/total.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">스텝</p>
+    </div>,
+    <div className="genre_list">
+      <img
+        src="/img/total.png"
+        onDragStart={handleDragStart}
+        alt="presentation"
+      />
+      <p className="genre_txt">영화</p>
+    </div>,
   ];
 
   return (

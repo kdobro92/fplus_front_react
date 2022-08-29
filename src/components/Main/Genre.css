@@ -12,26 +12,71 @@
 }
 
 .alice-carousel__stage-item {
-  margin: 0 0.8px;
-  border-radius: 8px;
+  /* width: 244px; */
+  /* height: 110px; */
+  /* margin: 0 0.8px; */
 }
 
 .alice-carousel__stage-item img {
   border-radius: 4px;
 }
 
+.alice-carousel__wrapper {
+  position: relative;
+}
+
+.alice-carousel__prev-btn {
+  position: absolute;
+  width: 0%;
+  top: 32px;
+  left: -20px;
+  font-size: 24px;
+}
+
+.alice-carousel__prev-btn-item {
+  color: #ffffff;
+  border: 1px solid #222222;
+  background-color: #ffffff;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+}
+
+.alice-carousel__prev-btn-item span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #222222;
+}
+
+.alice-carousel__next-btn {
+  position: absolute;
+  width: 0%;
+  top: 32px;
+  right: 16px;
+  font-size: 24px;
+}
+
+.alice-carousel__next-btn-item {
+  color: #ffffff;
+  border: 1px solid #222222;
+  background-color: #ffffff;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+}
+
+.alice-carousel__next-btn-item span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #222222;
+}
+
 .genre_list {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 244px;
-  height: 110px;
-  border: 1px solid blue;
-  margin: 8px;
-}
-
-.genre_img {
-  border-radius: 6px;
 }
 
 .genre_txt {
