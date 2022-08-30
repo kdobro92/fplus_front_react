@@ -1,8 +1,32 @@
+import { useState } from 'react';
+import axios from 'axios';
 import './Signin.css';
 
 function Signin({ modalHandler }) {
-  // const [userId, setUserId] = useState('');
-  // const [userPw, setUserPw] = useState('');
+  const [userId, setUserId] = useState('');
+  const [userPwd, setUserPwd] = useState('');
+
+  const userIdHandler = (e) => {
+    setUserId(e.target.value);
+  };
+
+  const userPwdHandler = (e) => {
+    setUserPwd(e.target.value);
+  };
+
+  const totalData = [userId, userPwd];
+
+  const loginHandler = async () => {
+    await axios
+      .post(
+        'http://localhost:8080/login',
+        { totalData },
+        { withCredentials: true },
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  };
 
   return (
     <div className="modal_background">
@@ -18,8 +42,18 @@ function Signin({ modalHandler }) {
           />
         </div>
         <div className="modal_middle">
-          <input type="text" className="login_id" placeholder="아이디" />
-          <input type="password" className="login_pw" placeholder="비밀번호" />
+          <input
+            type="text"
+            className="login_id"
+            placeholder="아이디"
+            onChange={userIdHandler}
+          />
+          <input
+            type="password"
+            className="login_pw"
+            placeholder="비밀번호"
+            onChange={userPwdHandler}
+          />
         </div>
         <div className="modal_bottom">
           <div className="wrap_login">
@@ -28,7 +62,7 @@ function Signin({ modalHandler }) {
           </div>
         </div>
         <div className="login_btn_con">
-          <button type="button" className="login_btn">
+          <button type="button" className="login_btn" onClick={loginHandler}>
             로그인
           </button>
         </div>
