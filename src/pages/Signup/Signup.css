@@ -1,9 +1,15 @@
 .wrap_signup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 142px;
+  display: flex;
+  justify-content: center;
+}
+
+.signup_container {
+  width: 356px;
+}
+
+.id_container {
+  text-align: center;
 }
 
 .inval_btn {
@@ -29,14 +35,6 @@
   line-height: 15px;
   margin-top: 8px;
   margin-bottom: 16px;
-}
-
-.signup_container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 1920px;
-  height: 90px;
 }
 
 .menu_text {
@@ -109,8 +107,9 @@ span {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  margin-top: 8px;
+  margin-top: 24px;
   margin-bottom: 8px;
+  text-align: start;
 }
 
 .friend_txt {
@@ -119,8 +118,12 @@ span {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  margin-top: 8px;
+  margin-top: 24px;
   margin-bottom: 8px;
+}
+
+.find_btn {
+  text-align: center;
 }
 
 .regi_btn {

@@ -89,46 +89,50 @@ function Signup() {
 
   return (
     <div className="wrap_signup">
-      <div className="id_txt">
-        아이디<span>(필수)</span>
-      </div>
-      <div className="id_container">
-        <input type="email" placeholder="이메일 형식" onChange={isValidId} />
-        <button type="button" className="inval_btn" onClick={sameIdCheck}>
-          중복확인
-        </button>
-      </div>
-      {userIdError && (
-        <div className="invalid-input">
-          *이메일 형식으로 입력해주세요(ex. fplus@adwiz.com)
+      <div className="signup_container">
+        <div className="id_txt">
+          아이디<span>(필수)</span>
         </div>
-      )}
-      <div className="pwd_txt">
-        비밀번호<span>(필수)</span>
-      </div>
-      <input
-        type="password"
-        placeholder="숫자, 영문, 특수문자 조합 최소 8자"
-        onChange={isValidPwd}
-      />
-      {passwordError && (
-        <div className="invalid-input">
-          *숫자,영문,특수문자 조합 최소 8자를 조합해주세요.
+        <div className="id_container">
+          <input type="email" placeholder="이메일 형식" onChange={isValidId} />
+          <button type="button" className="inval_btn" onClick={sameIdCheck}>
+            중복확인
+          </button>
         </div>
-      )}
-      <input
-        type="password"
-        placeholder="비밀번호 재입력"
-        onChange={isValidRePwd}
-      />
-      {confirmPasswordError && (
-        <div className="invalid-input">*비밀번호를 다시 확인해주세요.</div>
-      )}
-      <div className="friend_txt">친구 초대 추천인 아이디</div>
-      <input type="text" />
-      <button type="button" className="regi_btn" onClick={signupHandler}>
-        확인
-      </button>
+        {userIdError && (
+          <div className="invalid-input">
+            *이메일 형식으로 입력해주세요(ex. fplus@adwiz.com)
+          </div>
+        )}
+        <div className="pwd_txt">
+          비밀번호<span>(필수)</span>
+        </div>
+        <input
+          type="password"
+          placeholder="숫자, 영문, 특수문자 조합 최소 8자"
+          onChange={isValidPwd}
+        />
+        {passwordError && (
+          <div className="invalid-input">
+            *숫자,영문,특수문자 조합 최소 8자를 조합해주세요.
+          </div>
+        )}
+        <input
+          type="password"
+          placeholder="비밀번호 재입력"
+          onChange={isValidRePwd}
+        />
+        {confirmPasswordError && (
+          <div className="invalid-input">*비밀번호를 다시 확인해주세요.</div>
+        )}
+        <div className="friend_txt">친구 초대 추천인 아이디</div>
+        <input type="text" />
+        <div className="find_btn">
+          <button type="button" className="regi_btn" onClick={signupHandler}>
+            확인
+          </button>
+        </div>
+      </div>
     </div>
     // <div className="wrap_signup">
     //   <div className="menu_text">{'홈 > 회원가입'}</div>
