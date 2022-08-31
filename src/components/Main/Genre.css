@@ -11,12 +11,6 @@
   height: 110px;
 }
 
-.alice-carousel__stage-item {
-  /* width: 244px; */
-  /* height: 110px; */
-  /* margin: 0 0.8px; */
-}
-
 .alice-carousel__stage-item img {
   border-radius: 4px;
 }
@@ -40,12 +34,13 @@
   border-radius: 100%;
   width: 24px;
   height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .alice-carousel__prev-btn-item span {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  height: 16px;
   color: #222222;
 }
 
@@ -64,12 +59,13 @@
   border-radius: 100%;
   width: 24px;
   height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .alice-carousel__next-btn-item span {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  height: 16px;
   color: #222222;
 }
 
