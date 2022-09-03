@@ -75,7 +75,7 @@ function Signup() {
     if (validation()) return;
     await axios
       .post(
-        'http://localhost:8080/go_create',
+        'http://localhost:8090/go_create',
         {
           userInfo,
         },
