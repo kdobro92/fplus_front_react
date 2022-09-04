@@ -26,12 +26,6 @@ function Header() {
     },
   ];
 
-  // const menuList = [
-  //   { name: '홈', content: '' },
-  //   { name: 'MUSE', content: <Muse /> },
-  //   { name: '오디션', content: <Audition /> },
-  // ];
-
   const [currentTab, setCurrentTab] = useState(0);
   const [currentNav, setCurrentNav] = useState(0);
 
@@ -60,12 +54,6 @@ function Header() {
       </div>
     </Link>,
   ];
-
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   location.reload('/');
-  // });
 
   return (
     <div>
@@ -113,19 +101,6 @@ function Header() {
                 {menu}
               </li>
             ))}
-
-            {/* {menuList.map((menu, index) => (
-              <li
-                key={index}
-                className={
-                  currentNav === index ? 'navmenu focused_nav' : 'navmenu'
-                }
-                onClick={() => selectNavHandler(index)}
-                aria-hidden="true"
-              >
-                {menu.name}
-              </li>
-            ))} */}
           </div>
           <div className="right_nav">
             <button type="button" className="icon_btn">

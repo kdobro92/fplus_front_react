@@ -27,7 +27,7 @@
 }
 
 .wrap_meta {
-  width: 80px;
+  width: 70px;
   display: flex;
   align-items: center;
   position: relative;
@@ -35,12 +35,19 @@
 
 .wrap_meta img {
   position: absolute;
-  right: 68px;
+  right: 60px;
   top: -2px;
 }
 
 .meta_txt {
-  margin-left: 20px;
+  margin-left: 16px;
+  width: 80px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: #747c87;
 }
 
 .menu_list {
