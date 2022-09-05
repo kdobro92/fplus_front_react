@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Signin.css';
 
@@ -16,10 +17,11 @@ function Signin({ modalHandler }) {
 
   const totalData = [userId, userPwd];
 
+  // 서버에 로그인 요청
   const loginHandler = async () => {
     await axios
       .post(
-        'http://localhost:8080/login',
+        'http://localhost:8090/login',
         { totalData },
         { withCredentials: true },
       )
@@ -73,9 +75,11 @@ function Signin({ modalHandler }) {
           <button type="button" className="find_id">
             아이디 찾기
           </button>
-          <button type="button" className="register">
-            회원가입
-          </button>
+          <Link to="/signup">
+            <button type="button" className="register">
+              회원가입
+            </button>
+          </Link>
         </div>
         <div className="line_wrap">
           <span className="login_line" />

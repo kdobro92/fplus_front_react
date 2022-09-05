@@ -11,7 +11,7 @@ function Banner() {
         <div className="fil_txt">
           홈
           <IoIosArrowForward className="arrow_icon" />
-          MUSE
+          오디션
         </div>
       </div>
     </>

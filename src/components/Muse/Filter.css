@@ -1,4 +1,4 @@
-.fil_container {
+/* .fil_container {
   display: flex;
   justify-content: center;
 }
@@ -18,7 +18,7 @@
 .arrow_icon {
   position: relative;
   top: 2px;
-}
+} */
 
 .filter_con {
   height: 512px;

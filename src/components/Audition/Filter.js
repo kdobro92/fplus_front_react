@@ -61,8 +61,8 @@ function Filter() {
         <div className="filter_right">
           <div className="fil_right_half_1" />
           <div className="fil_right_half_2">
-            <span className="fil_right_txt">MUSE</span>
-            <span className="fil_right_people">759명</span>
+            <span className="fil_right_txt">공고</span>
+            <span className="fil_right_people">824건</span>
           </div>
         </div>
       </div>
