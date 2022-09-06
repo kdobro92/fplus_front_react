@@ -1,0 +1,67 @@
+.wrap_career {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.career_con {
+  display: flex;
+  align-items: center;
+  width: 1402px;
+}
+
+.career_left {
+  width: 640px;
+}
+
+.career_txt_con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.career_txt {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.career_more_btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #ffffff;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.career_more_btn > .more_txt {
+  margin-right: 28px;
+  color: #555555;
+}
+
+.career_more_btn > .more_img {
+  background-color: #555555;
+}
+
+.career_right {
+  display: flex;
+  align-items: center;
+  width: 680px;
+  margin-left: 80px;
+}
+
+.more_right_btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.more_right_txt {
+  margin-right: 28px;
+  color: #555555;
+}
