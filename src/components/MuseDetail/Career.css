@@ -1,13 +1,12 @@
 .wrap_career {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  width: 100%;
 }
 
 .career_con {
   display: flex;
-  align-items: center;
   width: 1402px;
 }
 
@@ -16,6 +15,14 @@
 }
 
 .career_txt_con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.career_txt_con_right {
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,10 +54,9 @@
 }
 
 .career_right {
-  display: flex;
-  align-items: center;
   width: 680px;
   margin-left: 80px;
+  height: 100%;
 }
 
 .more_right_btn {
@@ -64,4 +70,70 @@
 .more_right_txt {
   margin-right: 28px;
   color: #555555;
+}
+
+/* 경력 */
+.car_content {
+  margin-top: 44px;
+}
+
+.car_cotent_con {
+  display: flex;
+  margin-bottom: 48px;
+}
+
+.content_num {
+  font-size: 28px;
+  line-height: 100%;
+  color: #757e89;
+  padding-right: 64px;
+  line-height: 40px;
+  width: 40px;
+}
+
+.content_txt {
+  font-size: 28px;
+  line-height: 40px;
+  color: #222222;
+  padding: 0 100px 20px 0;
+}
+
+/* 대표작 */
+.wrap_mp_con {
+  margin-top: 90px;
+}
+
+.mp_con {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.mp_list {
+  width: 320px;
+  height: 420px;
+  border-radius: 10px;
+}
+
+.mp_list:nth-child(1) {
+  margin-right: 16px;
+  margin-top: 16px;
+}
+
+.mp_list:nth-child(2) {
+  margin-top: 16px;
+}
+
+.mp_list:nth-child(3) {
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.mp_list:nth-child(4) {
+  margin-top: 16px;
+}
+
+.mp_list_img {
+  width: 320px;
+  height: 420px;
 }
