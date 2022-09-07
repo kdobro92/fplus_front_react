@@ -1,15 +1,26 @@
 /* eslint-disable react/no-array-index-key */
 import { FaRegSmileWink } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Signin from '../pages/Signin';
 import './Header.css';
 
 function Header() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const modalHandler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const loginHandler = () => {
+    setIsLogin(!isLogin);
+  };
+
+  const requsetLogoutHandler = () => {
+    setIsLogin(false);
+    navigate('/');
   };
 
   const menuArr = [
@@ -102,24 +113,63 @@ function Header() {
               </li>
             ))}
           </div>
-          <div className="right_nav">
-            <button type="button" className="icon_btn">
-              <img src="img/upload.png" alt="upload" />
-            </button>
-            <button type="button" className="icon_btn">
-              <img src="img/alert.png" alt="alert" />
-            </button>
-            <button type="button" className="icon_btn">
-              <img src="img/message.png" alt="message" />
-            </button>
-            {isOpen ? <Signin modalHandler={modalHandler} /> : null}
-            <li className="nav_login" onClick={modalHandler} aria-hidden="true">
-              로그인
-            </li>
-            <Link to="/signup">
-              <li className="nav_signup">회원가입</li>
-            </Link>
-          </div>
+          {isLogin ? (
+            <div className="right_nav">
+              <button type="button" className="icon_btn">
+                <img src="img/upload.png" alt="upload" />
+              </button>
+              <button type="button" className="icon_btn">
+                <img src="img/alert.png" alt="alert" />
+              </button>
+              <button type="button" className="icon_btn">
+                <img src="img/message.png" alt="message" />
+              </button>
+              <Link to="/mypage">
+                <li
+                  className="nav_login"
+                  onClick={modalHandler}
+                  aria-hidden="true"
+                >
+                  마이페이지
+                </li>
+              </Link>
+              <li
+                className="nav_signup"
+                onClick={requsetLogoutHandler}
+                aria-hidden="true"
+              >
+                로그아웃
+              </li>
+            </div>
+          ) : (
+            <div className="right_nav">
+              <button type="button" className="icon_btn">
+                <img src="img/upload.png" alt="upload" />
+              </button>
+              <button type="button" className="icon_btn">
+                <img src="img/alert.png" alt="alert" />
+              </button>
+              <button type="button" className="icon_btn">
+                <img src="img/message.png" alt="message" />
+              </button>
+              {isOpen ? (
+                <Signin
+                  modalHandler={modalHandler}
+                  loginHandler={loginHandler}
+                />
+              ) : null}
+              <li
+                className="nav_login"
+                onClick={modalHandler}
+                aria-hidden="true"
+              >
+                로그인
+              </li>
+              <Link to="/signup">
+                <li className="nav_signup">회원가입</li>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

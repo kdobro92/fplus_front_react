@@ -1,0 +1,8 @@
+.banner_con {
+  height: 148px;
+}
+
+.banner_con > img {
+  width: 100%;
+  height: 148px;
+}

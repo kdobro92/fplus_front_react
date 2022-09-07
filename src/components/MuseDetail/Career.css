@@ -22,11 +22,10 @@
 }
 
 .career_txt_con_right {
-  padding: 0 10px;
+  padding: 0px 0px 0px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .career_txt {
@@ -101,6 +100,8 @@
 /* 대표작 */
 .wrap_mp_con {
   margin-top: 90px;
+  margin-left: 20px;
+  /* border: 1px solid black; */
 }
 
 .mp_con {
@@ -117,11 +118,6 @@
 
 .mp_list:nth-child(1) {
   margin-right: 16px;
-  margin-top: 16px;
-}
-
-.mp_list:nth-child(2) {
-  margin-top: 16px;
 }
 
 .mp_list:nth-child(3) {
@@ -136,4 +132,50 @@
 .mp_list_img {
   width: 320px;
   height: 420px;
+}
+
+.wrap_video {
+  margin-top: 48px;
+  margin-bottom: 42px;
+  padding: 0 12px;
+}
+
+.video_con {
+  display: inline-block;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.more_txt_btn {
+  display: flex;
+  align-items: center;
+  float: right;
+  border: none;
+  background-color: #ffffff;
+}
+
+.more_txt_video {
+  margin-right: 28px;
+}
+
+.more_txt_video {
+  color: #757e89;
+}
+
+.video {
+  border-radius: 10px;
+  padding: 0 12px;
+}
+
+.social_con {
+  margin-bottom: 44px;
+  font-size: 28px;
+  line-height: 35px;
+}
+
+.social_list {
+  margin-right: 10px;
+  color: #0c43b7;
+  font-size: 28px;
+  line-height: 35px;
 }

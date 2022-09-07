@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Post.css';
 
 function Post() {
@@ -146,31 +147,33 @@ function Post() {
       <div className="wrap_post">
         <div className="post_container">
           {postArr.map((data, index) => (
-            <div className="post_list" key={index}>
-              <div className="post_img_container">
-                <img className="post_img" src={data.image} alt="post" />
-                <button
-                  type="button"
-                  className="heart_btn"
-                  onClick={() => clickHeartHandler(index)}
-                >
-                  <img
-                    src={
-                      like && currentHeart === index
-                        ? 'img/heart_red.png'
-                        : 'img/heart.png'
-                    }
-                    alt="heart"
-                  />
-                </button>
+            <Link to="/musedetail">
+              <div className="post_list" key={index}>
+                <div className="post_img_container">
+                  <img className="post_img" src={data.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={() => clickHeartHandler(index)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === index
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{data.name}</li>
+                  <li className="post_type">{data.type}</li>
+                </div>
+                <li className="post_txt">{data.text}</li>
+                <li className="post_tag">{data.tag}</li>
               </div>
-              <div className="wrap_top">
-                <li className="post_name">{data.name}</li>
-                <li className="post_type">{data.type}</li>
-              </div>
-              <li className="post_txt">{data.text}</li>
-              <li className="post_tag">{data.tag}</li>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

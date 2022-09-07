@@ -1,0 +1,20 @@
+.wrap_mypage {
+  margin-top: 104px;
+  height: 148px;
+}
+
+.banner_con {
+  position: relative;
+}
+
+.aa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.bb {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+}

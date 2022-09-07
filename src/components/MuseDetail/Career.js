@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import './Career.css';
 
 function Career() {
@@ -38,6 +39,15 @@ function Career() {
                 20 S/S DE REVE 20 S/S O.F.F FASHION SHOW
               </h3>
             </li>
+          </div>
+          <div className="wrap_social_txt">
+            <div className="social_con">소셜/웹사이트</div>
+            <div className="social_link">
+              <span className="social_list">인스타그램</span>
+              <span className="social_list">페이스북</span>
+              <span className="social_list">네이버TV</span>
+              <span className="social_list">V LIVE</span>
+            </div>
           </div>
         </div>
         <div className="career_right">
@@ -80,6 +90,16 @@ function Career() {
               </li>
             </div>
           </div>
+          <div className="wrap_video">
+            <div className="video_con">영상</div>
+            <button type="button" className="more_txt_btn">
+              <span className="more_txt_video">더보기</span>
+              <img src="img/arrow_front.png" alt="more" className="more_img" />
+            </button>
+          </div>
+          <video width="672" loop autoPlay muted className="video">
+            <source src="img/nike.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>

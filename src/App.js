@@ -8,6 +8,7 @@ import MuseDetail from './pages/MuseDetail';
 import Audition from './pages/Audition';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup/Signup';
+import Mypage from './pages/Mypage';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/audition" element={<Audition />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
       <Footer />
     </>

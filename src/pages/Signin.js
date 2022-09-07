@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import './Signin.css';
 
-function Signin({ modalHandler }) {
+function Signin({ modalHandler, loginHandler }) {
   const [userId, setUserId] = useState('');
   const [userPwd, setUserPwd] = useState('');
 
@@ -16,19 +16,19 @@ function Signin({ modalHandler }) {
   };
 
   const totalData = [userId, userPwd];
-
+  console.log(totalData);
   // 서버에 로그인 요청
-  const loginHandler = async () => {
-    await axios
-      .post(
-        'http://localhost:8090/login',
-        { totalData },
-        { withCredentials: true },
-      )
-      .then((res) => {
-        console.log(res);
-      });
-  };
+  // const requestLoginHandler = async () => {
+  //   await axios
+  //     .post(
+  //       'http://localhost:8090/login',
+  //       { totalData },
+  //       { withCredentials: true },
+  //     )
+  //     .then((res) => {
+  //       console.log(res);
+  //     });
+  // };
 
   return (
     <div className="modal_background">
@@ -64,7 +64,12 @@ function Signin({ modalHandler }) {
           </div>
         </div>
         <div className="login_btn_con">
-          <button type="button" className="login_btn" onClick={loginHandler}>
+          <button
+            type="button"
+            className="login_btn"
+            // onClick={requestLoginHandler}
+            onClick={loginHandler}
+          >
             로그인
           </button>
         </div>
