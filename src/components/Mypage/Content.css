@@ -1,0 +1,23 @@
+.wrap_mp_content {
+  display: flex;
+  justify-content: end;
+  border: 1px solid black;
+}
+
+.mp_content_con {
+  border: 1px solid red;
+  width: 2128px;
+}
+
+.mp_content_tit {
+  display: inline-block;
+  font-size: 28px;
+  line-height: 35px;
+  color: #222222;
+  padding: 60px 16px 44px 22px;
+}
+
+.mp_content_more {
+  float: right;
+  border: 1px solid black;
+}
