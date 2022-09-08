@@ -7,14 +7,36 @@
   position: relative;
 }
 
-.aa {
+.abc {
+  display: flex;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 6.5%;
+  left: 42%;
+}
+
+.aa {
+  padding: 40px 60px 40px 40px;
+  font-size: 32px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.abcd {
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 41%;
+}
+
+.bb:nth-child(1) {
+  padding: 10px 60px 20px 36px;
+}
+
+.bb:nth-child(2) {
+  padding: 10px 60px 20px 4px;
 }
 
 .bb {
-  position: absolute;
-  top: 60%;
-  left: 60%;
+  color: #ffffff;
+  padding: 10px 60px 20px 20px;
 }
