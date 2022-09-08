@@ -1,0 +1,152 @@
+.wrap_side {
+    position: absolute;
+    height: 762px;
+    width: 344px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #ffffff;
+    bottom: -10px;
+    left: 68px;
+    z-index: 2;
+}
+
+.side_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+}
+
+.side_head > img {
+    margin-right: 40px;
+}
+
+.user_name {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 10px;
+}
+
+.user_inter {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(34, 34, 34, 0.8);
+}
+
+.side_mid {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.side_mid > li {
+    padding: 0px 0 0 36px;
+}
+
+.side_mid > li > img {
+    font-size: 20px;
+    width: 22px;
+    height: 26px;
+    margin-right: 30px;
+}
+
+.side_mid > li > span {
+    color: #222222;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.side_mid_list {
+    display: flex;
+    align-items: center;
+}
+
+.side_mid_2 {
+    height: 180px;
+    padding: 20px 20px 0 36px;
+}
+
+.side_mid_2_txt {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.side_body_info {
+    height: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.side_body_info > li {
+    height: 40px;
+    width: 148px;
+    display: flex;
+    align-items: center;
+}
+
+.side_body_info > li > p {
+    font-size: 16px;
+    line-height: 100%;
+    color: #222222;
+    width: 60px;
+}
+
+.side_body_info > li > span {
+    font-size: 16px;
+    line-height: 100%;
+    color: #222222;
+    margin-left: 32px;
+}
+
+.side_bot {
+    height: 214px;
+}
+
+.side_bot_txt {
+    padding-top: 20px;
+    padding-left: 36px;
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.add_cate_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 36px;
+    border: none;
+    width: 112px;
+    height: 24px;
+    border-radius: 32px;
+    background: #5433D4;
+    color: white;
+    cursor: pointer;
+}
+
+.plus_cate_icon {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.add_tag_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 36px;
+    border: none;
+    width: 112px;
+    height: 24px;
+    border-radius: 32px;
+    background: #FFFFFF;
+    border: 1px solid #5433D4;
+    color: #5433D4;
+    cursor: pointer;
+}

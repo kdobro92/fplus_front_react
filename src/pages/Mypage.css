@@ -1,10 +1,12 @@
 .wrap_mypage {
   margin-top: 104px;
-  height: 148px;
+  border: 1px solid red;
+  height: 1000px;
 }
 
 .banner_con {
   position: relative;
+  z-index: 1;
 }
 
 .aa {
@@ -18,3 +20,17 @@
   top: 60%;
   left: 60%;
 }
+
+/* .wrap_side {
+  position: absolute;
+  border: 1px solid black;
+  height: 762px;
+  width: 344px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  top: 120px;
+}
+
+.side_con {
+  top: 200px;
+} */
