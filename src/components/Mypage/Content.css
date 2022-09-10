@@ -2,11 +2,12 @@
   display: flex;
   justify-content: end;
   border: 1px solid black;
+  height: 1100px;
 }
 
 .mp_content_con {
   border: 1px solid red;
-  width: 2128px;
+  width: 1480px;
 }
 
 .mp_content_tit {
@@ -14,10 +15,33 @@
   font-size: 28px;
   line-height: 35px;
   color: #222222;
-  padding: 60px 16px 44px 22px;
+  padding: 60px 16px 44px 16px;
 }
 
 .mp_content_more {
   float: right;
   border: 1px solid black;
+}
+
+.content_row_1 {
+  flex: 2.2;
+  border: 1px solid red;
+}
+
+.content_row_2 {
+  flex: 7.8;
+  border: 1px solid blue;
+}
+
+.mp_content_img_con {
+  display: flex;
+  justify-content: center;
+  height: 336px;
+  cursor: pointer;
+}
+
+.aa {
+  margin: 0 16px;
+  width: 336px;
+  border-radius: 13px;
 }
