@@ -4,7 +4,7 @@ import './Content.css';
 function Content() {
   return (
     <div className="wrap_mp_content">
-      <div className="content_row_1">1</div>
+      <div className="content_row_1" />
       <div className="content_row_2">
         <div className="mp_content_con">
           <p className="mp_content_tit">포트폴리오</p>
