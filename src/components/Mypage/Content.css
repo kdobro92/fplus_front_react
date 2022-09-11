@@ -1,12 +1,10 @@
 .wrap_mp_content {
   display: flex;
   justify-content: end;
-  border: 1px solid black;
-  height: 1100px;
+  height: 100%;
 }
 
 .mp_content_con {
-  border: 1px solid red;
   width: 1480px;
 }
 
@@ -15,33 +13,122 @@
   font-size: 28px;
   line-height: 35px;
   color: #222222;
-  padding: 60px 16px 44px 16px;
+  padding: 60px 16px 44px 22px;
+}
+
+.more_port_con {
+  margin-right: 20px;
+  padding-top: 64px;
+  display: flex;
+  align-items: center;
+  float: right;
+  cursor: pointer;
+}
+
+.more_port_con .more_more {
+  font-size: 20px;
+  color: #555555;
+  margin-right: 28px;
 }
 
 .mp_content_more {
   float: right;
-  border: 1px solid black;
 }
 
 .content_row_1 {
   flex: 2.2;
-  border: 1px solid red;
 }
 
 .content_row_2 {
   flex: 7.8;
-  border: 1px solid blue;
 }
 
 .mp_content_img_con {
   display: flex;
   justify-content: center;
   height: 336px;
-  cursor: pointer;
 }
 
-.aa {
+.mp_upload {
   margin: 0 16px;
   width: 336px;
   border-radius: 13px;
+  display: flex;
+  overflow-y: hidden;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mp_file {
+  border: 1px solid #dddddd;
+  color: #999999;
+  height: 336px;
+  width: 336px;
+  position: absolute;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  cursor: pointer;
+}
+
+input::file-selector-button {
+  display: none;
+}
+
+.user_content_con {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.user_content_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user_mp {
+  margin: 18px;
+  width: 700px;
+  height: 600px;
+  cursor: pointer;
+}
+
+.user_mp_txt > p {
+  display: inline-block;
+  font-size: 28px;
+  line-height: 35px;
+  color: #222222;
+}
+
+.more_con {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  float: right;
+  cursor: pointer;
+}
+
+.more_con .more_more {
+  font-size: 20px;
+  color: #555555;
+}
+
+.more_con > img {
+  margin-left: 28px;
+  line-height: 20px;
+}
+
+.user_mp_txt > span {
+  font-size: 20px;
+  line-height: 25px;
+  color: #757e89;
+  margin-left: 16px;
+}
+
+.user_upload_awards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 556px;
 }
