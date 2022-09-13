@@ -1,0 +1,24 @@
+.wrap_audi_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.audi_underline {
+  border: 1px solid rgba(117, 126, 137, 0.5);
+  width: 1460px;
+}
+
+.audi_img_con {
+  display: flex;
+  justify-content: center;
+}
+
+.audi_img {
+  width: 1460px;
+}
+
+.audi_img > img {
+  width: 100%;
+}

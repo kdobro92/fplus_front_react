@@ -127,6 +127,17 @@ function Signup() {
         )}
         <div className="friend_txt">친구 초대 추천인 아이디</div>
         <input type="text" />
+        <div className="sns-container">
+          <li>
+            <img src="img/kakao.png" alt="kakao" />
+          </li>
+          <li>
+            <img src="img/naver.png" alt="kakao" />
+          </li>
+          <li>
+            <img src="img/apple.png" alt="kakao" />
+          </li>
+        </div>
         <div className="find_btn">
           <button type="button" className="regi_btn" onClick={signupHandler}>
             확인

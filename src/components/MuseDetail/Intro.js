@@ -16,8 +16,6 @@ function Intro() {
     setCurrentImg(images[idx]);
   };
 
-  console.log(currentImg);
-
   return (
     <>
       <div className="intro_menu">

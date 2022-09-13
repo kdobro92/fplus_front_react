@@ -1,8 +1,42 @@
 .banner_con {
   height: 148px;
+  position: relative;
 }
 
 .banner_con > img {
   width: 100%;
   height: 148px;
+}
+
+.user_profile_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 14%;
+  left: 40%;
+  width: 500px;
+  height: 100px;
+}
+
+.three_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 40px;
+  width: 140px;
+}
+
+.three_list > li {
+  color: #ffffff;
+}
+
+.three_list > li:nth-child(2) {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }

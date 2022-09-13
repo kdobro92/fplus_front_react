@@ -5,6 +5,9 @@
 }
 
 .signup_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 360px;
 }
 
@@ -120,6 +123,16 @@ span {
   line-height: 20px;
   margin-top: 24px;
   margin-bottom: 8px;
+}
+
+.sns-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 72px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 134px;
 }
 
 .find_btn {
