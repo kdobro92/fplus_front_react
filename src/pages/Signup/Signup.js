@@ -53,7 +53,7 @@ function Signup() {
   };
 
   // 유저 아이디 중복 검사
-  const sameIdCheck = async () => {
+  const duplicateUserCheck = async () => {
     await axios
       .post(
         'http://localhost:8080/go_create',
@@ -67,6 +67,7 @@ function Signup() {
         console.log(res);
       });
   };
+
   // 서버에 요청할 모든 유저 정보
   const userInfo = [userId, userPwd, userRePwd];
 
@@ -95,7 +96,11 @@ function Signup() {
         </div>
         <div className="id_container">
           <input type="email" placeholder="이메일 형식" onChange={isValidId} />
-          <button type="button" className="inval_btn" onClick={sameIdCheck}>
+          <button
+            type="button"
+            className="inval_btn"
+            onClick={duplicateUserCheck}
+          >
             중복확인
           </button>
         </div>
@@ -130,12 +135,15 @@ function Signup() {
         <div className="sns-container">
           <li>
             <img src="img/kakao.png" alt="kakao" />
+            <h4>카카오</h4>
           </li>
           <li>
             <img src="img/naver.png" alt="kakao" />
+            <h4>네이버</h4>
           </li>
           <li>
             <img src="img/apple.png" alt="kakao" />
+            <h4>애플</h4>
           </li>
         </div>
         <div className="find_btn">
