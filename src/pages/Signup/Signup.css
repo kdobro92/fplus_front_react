@@ -135,6 +135,18 @@ span {
   height: 134px;
 }
 
+.sns-container > li > img {
+  cursor: pointer;
+}
+
+.sns-container > li > h4 {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: #757e89;
+}
+
 .find_btn {
   text-align: center;
 }
