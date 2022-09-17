@@ -51,17 +51,17 @@ function Header() {
   const data = [
     <Link to="/">
       <div className="wrap_menu">
-        <p className="menu_txt">홈</p>
+        <li className="menu_txt">홈</li>
       </div>
     </Link>,
     <Link to="/muse">
       <div className="wrap_menu">
-        <p className="menu_txt">MUSE</p>
+        <li className="menu_txt">MUSE</li>
       </div>
     </Link>,
     <Link to="/audition">
       <div className="wrap_menu">
-        <p className="menu_txt">오디션</p>
+        <li className="menu_txt">오디션</li>
       </div>
     </Link>,
   ];

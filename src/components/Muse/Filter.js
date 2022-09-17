@@ -1,12 +1,11 @@
 /* eslint-disable react/no-array-index-key */
-// import { IoIosArrowForward } from 'react-icons/io';
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import './Filter.css';
 
 function Filter() {
   const [isToggle, setIsToggle] = useState(true);
-  const [peoMenu, setPeoMenu] = useState([
+  const [peopleMenu, setPeopelMenu] = useState([
     '뮤직비디오 연기자',
     '웹드라마 연기자',
   ]);
@@ -15,8 +14,9 @@ function Filter() {
     setIsToggle(!isToggle);
   };
 
-  const delPeoMenuHandler = (idx) => {
-    setPeoMenu(idx);
+  const deleteMenuHandler = (idx) => {
+    const newList = peopleMenu.filter((menu) => menu.id !== idx);
+    setPeopelMenu(newList);
   };
 
   return (
@@ -80,8 +80,8 @@ function Filter() {
               <div className="filter_right">
                 <div className="fil_right_half_1" />
                 <div className="fil_right_half_2">
-                  <span className="fil_right_txt">MUSE</span>
-                  <span className="fil_right_people">759명</span>
+                  <span className="fil_right_txt">공고</span>
+                  <span className="fil_right_people">824건</span>
                 </div>
               </div>
             </div>
@@ -101,9 +101,9 @@ function Filter() {
                 <button type="button" className="btn_list">
                   최신순
                 </button>
-                {/* <button type="button" className="btn_list">
+                <button type="button" className="btn_list">
                   팔로우한 MUSE만 보기
-                </button> */}
+                </button>
               </div>
               <div
                 className="fold_menu"
@@ -132,16 +132,16 @@ function Filter() {
               <button type="button" className="btn_list">
                 최신순
               </button>
-              {/* <button type="button" className="btn_list">
-                  팔로우한 MUSE만 보기
-                </button> */}
-              {peoMenu.map((menu, idx) => (
+              <button type="button" className="btn_list">
+                팔로우한 MUSE만 보기
+              </button>
+              {peopleMenu.map((menu, idx) => (
                 <span className="peo_menu" key={idx}>
                   {menu}
                   <button
                     type="button"
                     className="del_peo_menu"
-                    onClick={delPeoMenuHandler}
+                    onClick={deleteMenuHandler}
                   >
                     <img src="img/del_peo_menu.png" alt="del" />
                   </button>

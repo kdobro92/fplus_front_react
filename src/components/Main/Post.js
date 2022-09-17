@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -117,11 +118,18 @@ function Post() {
   ];
 
   const [like, setLike] = useState(false);
-  const [currentHeart, setCurrentHeart] = useState();
+  const [currentHeart, setCurrentHeart] = useState(0);
 
   const clickHeartHandler = (index) => {
     setLike(!like);
     setCurrentHeart(index);
+  };
+
+  const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
+  const [currentMenu, setCurrentMenu] = useState(0);
+
+  const toggleActive = (idx) => {
+    setCurrentMenu(idx);
   };
 
   return (
@@ -129,18 +137,17 @@ function Post() {
       <div className="wrap_filter">
         <div className="filter_container">
           <div className="filter_list">
-            <button type="button" className="btn_list">
-              정렬방식 :
-            </button>
-            <button type="button" className="btn_list">
-              관심순
-            </button>
-            <button type="button" className="btn_list">
-              인기순
-            </button>
-            <button type="button" className="btn_list">
-              최신순
-            </button>
+            <div className="btn_list">정렬방식 : </div>
+            {sortedMenu.map((menu, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={currentMenu === idx ? 'btn_list active' : 'btn_list'}
+                onClick={() => toggleActive(idx)}
+              >
+                {menu}
+              </button>
+            ))}
           </div>
         </div>
       </div>

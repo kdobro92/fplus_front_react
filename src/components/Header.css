@@ -91,7 +91,7 @@
 }
 
 .wrap_left_nav {
-  height: 65px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,20 +132,16 @@
 .navmenu {
   display: flex;
   align-items: center;
-  font-family: 'Spoqa Han Sans Neo';
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   color: #222222;
   margin-right: 32px;
-  /* padding: 20px 0px 20px 0px; */
-}
-
-.navmenu:hover {
   cursor: pointer;
 }
 
 .focused_nav {
+  height: 62px;
+  border-top: 2px solid #ffffff;
   border-bottom: 2px solid black;
 }
 

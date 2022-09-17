@@ -23,6 +23,19 @@
   font-size: 16px;
   line-height: 20px;
   color: #757e89;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.active {
+  border: none;
+  color: #222222;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
 }
 
 .btn_list::after {
@@ -35,7 +48,7 @@
   content: '';
 }
 
-.btn_list:nth-child(4)::after {
+.btn_list:nth-child(5)::after {
   content: '';
 }
 

@@ -22,14 +22,14 @@
 .alice-carousel__prev-btn {
   position: absolute;
   width: 0%;
-  top: 32px;
+  top: 28px;
   left: -20px;
   font-size: 24px;
 }
 
 .alice-carousel__prev-btn-item {
   color: #ffffff;
-  border: 1px solid #222222;
+  border: 1px solid #747c87;
   background-color: #ffffff;
   border-radius: 100%;
   width: 24px;
@@ -41,20 +41,20 @@
 
 .alice-carousel__prev-btn-item span {
   height: 16px;
-  color: #222222;
+  color: #747c87;
 }
 
 .alice-carousel__next-btn {
   position: absolute;
   width: 0%;
-  top: 32px;
+  top: 28px;
   right: 16px;
   font-size: 24px;
 }
 
 .alice-carousel__next-btn-item {
   color: #ffffff;
-  border: 1px solid #222222;
+  border: 1px solid #747c87;
   background-color: #ffffff;
   border-radius: 100%;
   width: 24px;
@@ -66,13 +66,23 @@
 
 .alice-carousel__next-btn-item span {
   height: 16px;
-  color: #222222;
+  color: #747c87;
 }
 
 .genre_list {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.focused_genre {
+  background-color: linear-gradient(
+    238.87deg,
+    rgba(255, 114, 53, 0.9) -41.02%,
+    rgba(84, 51, 212, 0.9) 77.01%
+  );
+  border: 1px solid red;
 }
 
 .genre_txt {
