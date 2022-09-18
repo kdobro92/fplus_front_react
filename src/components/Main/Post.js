@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Post.css';
 
 function Post() {
@@ -117,19 +117,24 @@ function Post() {
     },
   ];
 
+  const navigate = useNavigate();
+  const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
   const [like, setLike] = useState(false);
+  const [currentMenu, setCurrentMenu] = useState(0);
   const [currentHeart, setCurrentHeart] = useState(0);
 
-  const clickHeartHandler = (index) => {
-    setLike(!like);
-    setCurrentHeart(index);
+  const selectSortedMenuHandler = (idx) => {
+    setCurrentMenu(idx);
   };
 
-  const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
-  const [currentMenu, setCurrentMenu] = useState(0);
+  const clickHeartHandler = (idx) => {
+    setLike(!like);
+    setCurrentHeart(idx);
+  };
 
-  const toggleActive = (idx) => {
-    setCurrentMenu(idx);
+  const clickDetailHandler = (e) => {
+    e.stopPropagation();
+    navigate('/musedetail');
   };
 
   return (
@@ -143,7 +148,7 @@ function Post() {
                 key={idx}
                 type="button"
                 className={currentMenu === idx ? 'btn_list active' : 'btn_list'}
-                onClick={() => toggleActive(idx)}
+                onClick={() => selectSortedMenuHandler(idx)}
               >
                 {menu}
               </button>
@@ -154,33 +159,36 @@ function Post() {
       <div className="wrap_post">
         <div className="post_container">
           {postArr.map((data, index) => (
-            <Link to="/musedetail">
-              <div className="post_list" key={index}>
-                <div className="post_img_container">
-                  <img className="post_img" src={data.image} alt="post" />
-                  <button
-                    type="button"
-                    className="heart_btn"
-                    onClick={() => clickHeartHandler(index)}
-                  >
-                    <img
-                      src={
-                        like && currentHeart === index
-                          ? 'img/heart_red.png'
-                          : 'img/heart.png'
-                      }
-                      alt="heart"
-                    />
-                  </button>
-                </div>
-                <div className="wrap_top">
-                  <li className="post_name">{data.name}</li>
-                  <li className="post_type">{data.type}</li>
-                </div>
-                <li className="post_txt">{data.text}</li>
-                <li className="post_tag">{data.tag}</li>
+            <div
+              key={index}
+              className="post_list"
+              onClick={clickDetailHandler}
+              aria-hidden="true"
+            >
+              <div className="post_img_container">
+                <img className="post_img" src={data.image} alt="post" />
+                <button
+                  type="button"
+                  className="heart_btn"
+                  onClick={() => clickHeartHandler(index)}
+                >
+                  <img
+                    src={
+                      like && currentHeart === index
+                        ? 'img/heart_red.png'
+                        : 'img/heart.png'
+                    }
+                    alt="heart"
+                  />
+                </button>
               </div>
-            </Link>
+              <div className="wrap_top">
+                <li className="post_name">{data.name}</li>
+                <li className="post_type">{data.type}</li>
+              </div>
+              <li className="post_txt">{data.text}</li>
+              <li className="post_tag">{data.tag}</li>
+            </div>
           ))}
         </div>
       </div>
@@ -218,7 +226,7 @@ function Post() {
       <div className="wrap_post">
         <div className="post_container">
           {postArr3.map((data, index) => (
-            <div key={index} className="post_list">
+            <div className="post_list" key={index}>
               <div className="post_img_container">
                 <img className="post_img" src={data.image} alt="post" />
                 <button

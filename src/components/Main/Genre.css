@@ -76,13 +76,19 @@
   cursor: pointer;
 }
 
+.genre_list > img {
+  z-index: 1;
+}
+
 .focused_genre {
-  background-color: linear-gradient(
-    238.87deg,
-    rgba(255, 114, 53, 0.9) -41.02%,
-    rgba(84, 51, 212, 0.9) 77.01%
-  );
-  border: 1px solid red;
+  border-radius: 4px;
+  border: 1px solid
+    linear-gradient(
+      238.87deg,
+      rgba(255, 114, 53, 0.9) -41.02%,
+      rgba(84, 51, 212, 0.9) 77.01%
+    );
+  z-index: 2;
 }
 
 .genre_txt {
@@ -93,4 +99,5 @@
   font-size: 18px;
   line-height: 23px;
   color: #ffffff;
+  z-index: 2;
 }
