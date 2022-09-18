@@ -116,7 +116,7 @@ function Genre() {
             },
           }}
         >
-          {items.map((item, idx) => (
+          {items.map((menu, idx) => (
             <li
               key={idx}
               className={
@@ -125,7 +125,7 @@ function Genre() {
               onClick={() => selectTabHandler(idx)}
               aria-hidden="true"
             >
-              {item}
+              {menu}
             </li>
           ))}
         </AliceCarousel>
