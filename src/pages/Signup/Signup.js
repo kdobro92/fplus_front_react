@@ -6,9 +6,11 @@ import { useState } from 'react';
 import './Signup.css';
 
 function Signup() {
-  const [userId, setUserId] = useState('');
-  const [userPwd, setUserPwd] = useState('');
-  const [userRePwd, setUserRePwd] = useState('');
+  const [email, setUserId] = useState('');
+  const [password, setUserPwd] = useState('');
+  const [repassword, setUserRePwd] = useState('');
+  const [friendId, setFriendId] = useState('');
+  const [userRole, setUserRole] = useState('');
 
   const [userIdError, setUserIdError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
@@ -32,24 +34,33 @@ function Signup() {
       setPasswordError(false);
     } else setPasswordError(true);
 
-    if (e.target.value === userRePwd) {
+    if (e.target.value === repassword) {
       setConfirmPasswordError(false);
     } else setConfirmPasswordError(true);
     setUserPwd(e.target.value);
   };
 
-  // 유효성검사 유저 비빌번호 재입력 정규표현식 || 사용자에게 입력받는 RePwd를 userRePwd 상태관리 변수에 최신화
+  // 유효성검사 유저 비빌번호 재입력 정규표현식 || 사용자에게 입력받는 RePwd를 repassword 상태관리 변수에 최신화
   const isValidRePwd = (e) => {
-    if (userPwd === e.target.value) setConfirmPasswordError(false);
+    if (password === e.target.value) setConfirmPasswordError(false);
     else setConfirmPasswordError(true);
     setUserRePwd(e.target.value);
   };
 
+  // 친구 초대 추천인 아이디
+  const isValidFriendId = (e) => {
+    setFriendId(e.target.value);
+  };
+
+  const userRoleHandler = (e) => {
+    setUserRole(e.target.value);
+  };
+
   // 유저아이디, 비밀번호, 비밀번호 재입력 값들이 다르면, 에러메세지 출력
   const validation = () => {
-    if (!userId) setUserIdError(true);
-    if (!userPwd) setPasswordError(true);
-    if (!userRePwd) setConfirmPasswordError(true);
+    if (!email) setUserIdError(true);
+    if (!password) setPasswordError(true);
+    if (!repassword) setConfirmPasswordError(true);
   };
 
   // 유저 아이디 중복 검사
@@ -58,7 +69,7 @@ function Signup() {
       .post(
         'http://localhost:8080/go_create',
         {
-          userId,
+          email,
         },
         { withCredentials: true },
       )
@@ -69,14 +80,14 @@ function Signup() {
   };
 
   // 서버에 요청할 모든 유저 정보
-  const userInfo = [userId, userPwd, userRePwd];
+  const userInfo = [email, password, repassword, friendId, userRole];
 
   // 서버에 유저 정보를 담아 요청하는 함수
   const signupHandler = async () => {
     if (validation()) return;
     await axios
       .post(
-        'http://localhost:8090/go_create',
+        'http://localhost:3000/signup',
         {
           userInfo,
         },
@@ -91,11 +102,17 @@ function Signup() {
   return (
     <div className="wrap_signup">
       <div className="signup_container">
+        <input type="hidden" value={userRole} onChange={userRoleHandler} />
         <div className="id_txt">
           아이디<span>(필수)</span>
         </div>
         <div className="id_container">
-          <input type="email" placeholder="이메일 형식" onChange={isValidId} />
+          <input
+            type="email"
+            placeholder="이메일 형식"
+            onChange={isValidId}
+            value={email}
+          />
           <button
             type="button"
             className="inval_btn"
@@ -116,6 +133,7 @@ function Signup() {
           type="password"
           placeholder="숫자, 영문, 특수문자 조합 최소 8자"
           onChange={isValidPwd}
+          value={password}
         />
         {passwordError && (
           <div className="invalid-input">
@@ -126,12 +144,13 @@ function Signup() {
           type="password"
           placeholder="비밀번호 재입력"
           onChange={isValidRePwd}
+          value={repassword}
         />
         {confirmPasswordError && (
           <div className="invalid-input">*비밀번호를 다시 확인해주세요.</div>
         )}
         <div className="friend_txt">친구 초대 추천인 아이디</div>
-        <input type="text" />
+        <input type="text" onChange={isValidFriendId} value={friendId} />
         <div className="sns-container">
           <li>
             <img src="img/kakao.png" alt="kakao" />

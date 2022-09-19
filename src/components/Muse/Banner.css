@@ -1,6 +1,12 @@
 .wrap_banner {
   margin-top: 100px;
   height: 148px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap_banner > img {
+  width: 100%;
 }
 
 .fil_container {

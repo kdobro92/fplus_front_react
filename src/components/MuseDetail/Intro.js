@@ -1,8 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Intro.css';
 
 function Intro() {
+  const navigate = useNavigate();
   const images = [
     'img/detail1.png',
     'img/detail2.png',
@@ -16,11 +19,20 @@ function Intro() {
     setCurrentImg(images[idx]);
   };
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <div className="intro_menu">
         <div className="intro_con">
-          <img src="img/arrow_back.png" alt="back" />
+          <img
+            src="img/arrow_back.png"
+            alt="back"
+            onClick={goBack}
+            aria-hidden="true"
+          />
           <span className="intro_menu_txt">MUSE</span>
         </div>
       </div>

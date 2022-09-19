@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-import { FaRegSmileWink } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Signin from '../pages/Signin';
@@ -65,13 +64,12 @@ function Header() {
       </div>
     </Link>,
   ];
-
   return (
     <div>
       <div className="header_container">
         <div className="wrap_header">
           <li className="menu_list">
-            <FaRegSmileWink />
+            <img src="img/fplus_logo3.png" alt="logo" />
           </li>
           {menuArr.map((menu, index) => (
             <li
@@ -88,11 +86,6 @@ function Header() {
           <div className="left_nav">
             <Link to="/">
               <li className="nav_list">
-                <img
-                  src="img/head_logo.png"
-                  className="nav_list_head_logo"
-                  alt="head"
-                />
                 <img
                   src="img/fplus_logo.png"
                   className="nav_list_logo_txt"
