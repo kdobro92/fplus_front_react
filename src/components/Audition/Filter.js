@@ -1,21 +1,37 @@
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import './Filter.css';
 
 function Filter() {
-  const [isToggle, setIsToggle] = useState(true);
-  const [peoMenu, setPeoMenu] = useState([
-    '뮤직비디오 연기자',
-    '웹드라마 연기자',
+  const [isToggle, setIsToggle] = useState(false);
+  const [peopleMenu, setPeopelMenu] = useState([
+    { id: 1, name: '뮤직비디오 연기자' },
+    { id: 2, name: '웹드라마 연기자' },
+    { id: 3, name: '연극단원' },
+    { id: 4, name: 'OTT' },
   ]);
+
+  const genres = ['연기', '모델', '뮤지컬', '퍼포먼스', '스텝'];
+  const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
+
+  const [currentGenre, setCurrentGenre] = useState(0);
+  const [currentMenu, setCurrentMenu] = useState(0);
+
+  const selectGenreHandler = (idx) => {
+    setCurrentGenre(idx);
+  };
 
   const toggleHandler = () => {
     setIsToggle(!isToggle);
   };
 
-  const delPeoMenuHandler = (idx) => {
-    setPeoMenu(idx);
+  const selectSortedMenuHandler = (idx) => {
+    setCurrentMenu(idx);
+  };
+
+  const deleteMenuHandler = (idx) => {
+    const newList = peopleMenu.filter((menu) => menu.id !== idx);
+    setPeopelMenu(newList);
   };
 
   return (
@@ -51,11 +67,18 @@ function Filter() {
                 <div className="filter_bot">
                   <div className="fil_col_2">
                     <ul>
-                      <li>연기</li>
-                      <li>모델</li>
-                      <li>뮤지컬</li>
-                      <li>퍼포먼스</li>
-                      <li>스텝</li>
+                      {genres.map((menu, idx) => (
+                        <li
+                          key={idx}
+                          className={
+                            currentGenre === idx ? 'focused_genre' : ''
+                          }
+                          onClick={() => selectGenreHandler(idx)}
+                          aria-hidden
+                        >
+                          {menu}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div className="fil_col_8">
@@ -88,21 +111,19 @@ function Filter() {
           <div className="big_filter_con">
             <div className="sort_con">
               <div className="filter_list">
-                <button type="button" className="btn_list">
-                  정렬방식 :
-                </button>
-                <button type="button" className="btn_list">
-                  관심순
-                </button>
-                <button type="button" className="btn_list">
-                  인기순
-                </button>
-                <button type="button" className="btn_list">
-                  최신순
-                </button>
-                {/* <button type="button" className="btn_list">
-                  팔로우한 MUSE만 보기
-                </button> */}
+                <div className="btn_list">정렬방식 : </div>
+                {sortedMenu.map((menu, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={
+                      currentMenu === idx ? 'btn_list active' : 'btn_list'
+                    }
+                    onClick={() => selectSortedMenuHandler(idx)}
+                  >
+                    {menu}
+                  </button>
+                ))}
               </div>
               <div
                 className="fold_menu"
@@ -119,32 +140,30 @@ function Filter() {
         <div className="small_filter_con">
           <div className="sort_con">
             <div className="filter_list">
-              <button type="button" className="btn_list">
-                정렬방식 :
-              </button>
-              <button type="button" className="btn_list">
-                관심순
-              </button>
-              <button type="button" className="btn_list">
-                인기순
-              </button>
-              <button type="button" className="btn_list">
-                최신순
-              </button>
-              {/* <button type="button" className="btn_list">
-                  팔로우한 MUSE만 보기
-                </button> */}
-              {peoMenu.map((menu, idx) => (
-                <span className="peo_menu" key={idx}>
+              <div className="btn_list">정렬방식 : </div>
+              {sortedMenu.map((menu, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  className={
+                    currentMenu === idx ? 'btn_list active' : 'btn_list'
+                  }
+                  onClick={() => selectSortedMenuHandler(idx)}
+                >
                   {menu}
+                </button>
+              ))}
+              {peopleMenu.map((menu) => (
+                <div className="peo_menu" key={menu.id}>
+                  <h4>{menu.name}</h4>
                   <button
                     type="button"
                     className="del_peo_menu"
-                    onClick={delPeoMenuHandler}
+                    onClick={() => deleteMenuHandler(menu.id)}
                   >
                     <img src="img/del_peo_menu.png" alt="del" />
                   </button>
-                </span>
+                </div>
               ))}
             </div>
             <div className="fil_right">

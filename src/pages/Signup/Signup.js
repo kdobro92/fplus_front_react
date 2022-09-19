@@ -87,7 +87,7 @@ function Signup() {
     if (validation()) return;
     await axios
       .post(
-        'http://localhost:3000/signup',
+        'http://localhost:3000/w1/signup',
         {
           userInfo,
         },

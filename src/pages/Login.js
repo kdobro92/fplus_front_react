@@ -1,34 +1,40 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-// import axios from 'axios';
-import './Signin.css';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './Login.css';
 
-function Signin({ modalHandler, loginHandler }) {
-  const [userId, setUserId] = useState('');
-  const [userPwd, setUserPwd] = useState('');
+function Login({ modalHandler }) {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  // const [accessToken, setAccessToken] = useState("");
 
   const userIdHandler = (e) => {
-    setUserId(e.target.value);
+    setUsername(e.target.value);
   };
 
   const userPwdHandler = (e) => {
-    setUserPwd(e.target.value);
+    setPassword(e.target.value);
   };
 
-  const totalData = [userId, userPwd];
-  console.log(totalData);
   // 서버에 로그인 요청
-  // const requestLoginHandler = async () => {
-  //   await axios
-  //     .post(
-  //       'http://localhost:8090/login',
-  //       { totalData },
-  //       { withCredentials: true },
-  //     )
-  //     .then((res) => {
-  //       console.log(res);
-  //     });
-  // };
+  const requestLoginHandler = async () => {
+    await axios
+      .post(
+        'http://localhost:3000/w1/login',
+        { username, password },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+        { withCredentials: true },
+      )
+      .then((res) => {
+        console.log(res);
+        navigate('/w1');
+      });
+  };
 
   return (
     <div className="modal_background">
@@ -67,8 +73,7 @@ function Signin({ modalHandler, loginHandler }) {
           <button
             type="button"
             className="login_btn"
-            // onClick={requestLoginHandler}
-            onClick={loginHandler}
+            onClick={requestLoginHandler}
           >
             로그인
           </button>
@@ -80,7 +85,7 @@ function Signin({ modalHandler, loginHandler }) {
           <button type="button" className="find_id">
             아이디 찾기
           </button>
-          <Link to="/signup">
+          <Link to="/w1/signup">
             <button type="button" className="register">
               회원가입
             </button>
@@ -110,4 +115,4 @@ function Signin({ modalHandler, loginHandler }) {
   );
 }
 
-export default Signin;
+export default Login;

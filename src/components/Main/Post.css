@@ -23,6 +23,19 @@
   font-size: 16px;
   line-height: 20px;
   color: #757e89;
+  cursor: pointer;
+  transition: 0s;
+}
+
+.active {
+  border: none;
+  color: #222222;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
 }
 
 .btn_list::after {
@@ -35,7 +48,7 @@
   content: '';
 }
 
-.btn_list:nth-child(4)::after {
+.btn_list:nth-child(5)::after {
   content: '';
 }
 
@@ -59,6 +72,7 @@
   width: 340px;
   height: 500px;
   margin: 12px;
+  z-index: 1;
 }
 
 .post_img_container {
@@ -89,6 +103,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  z-index: 999;
 }
 
 .wrap_top {

@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Signin from '../pages/Signin';
+import Login from '../pages/Login';
 import './Header.css';
 
 function Header() {
@@ -48,19 +48,19 @@ function Header() {
   };
 
   const data = [
-    <Link to="/">
+    <Link to="/w1">
       <div className="wrap_menu">
-        <p className="menu_txt">홈</p>
+        <li className="menu_txt">홈</li>
       </div>
     </Link>,
-    <Link to="/muse">
+    <Link to="/w1/muse">
       <div className="wrap_menu">
-        <p className="menu_txt">MUSE</p>
+        <li className="menu_txt">MUSE</li>
       </div>
     </Link>,
-    <Link to="/audition">
+    <Link to="/w1/audition">
       <div className="wrap_menu">
-        <p className="menu_txt">오디션</p>
+        <li className="menu_txt">오디션</li>
       </div>
     </Link>,
   ];
@@ -84,7 +84,7 @@ function Header() {
         </div>
         <div className="wrap_left_nav">
           <div className="left_nav">
-            <Link to="/">
+            <Link to="/w1">
               <li className="nav_list">
                 <img
                   src="img/fplus_logo.png"
@@ -117,7 +117,7 @@ function Header() {
               <button type="button" className="icon_btn">
                 <img src="img/message.png" alt="message" />
               </button>
-              <Link to="/mypage">
+              <Link to="/w1/mypage">
                 <li
                   className="nav_login"
                   onClick={modalHandler}
@@ -146,7 +146,7 @@ function Header() {
                 <img src="img/message.png" alt="message" />
               </button>
               {isOpen ? (
-                <Signin
+                <Login
                   modalHandler={modalHandler}
                   loginHandler={loginHandler}
                 />
@@ -158,7 +158,7 @@ function Header() {
               >
                 로그인
               </li>
-              <Link to="/signup">
+              <Link to="/w1/signup">
                 <li className="nav_signup">회원가입</li>
               </Link>
             </div>

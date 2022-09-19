@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-array-index-key */
+import { useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import './Genre.css';
@@ -94,12 +95,17 @@ function Genre() {
     </div>,
   ];
 
+  const [currentMenu, setCurrentMenu] = useState(0);
+
+  const selectTabHandler = (idx) => {
+    setCurrentMenu(idx);
+  };
+
   return (
     <div className="wrap_container">
       <div className="wrap_genre">
         <AliceCarousel
           mouseTracking
-          items={items}
           disableDotsControls
           responsive={{
             0: {
@@ -109,7 +115,20 @@ function Genre() {
               items: 7,
             },
           }}
-        />
+        >
+          {items.map((menu, idx) => (
+            <li
+              key={idx}
+              className={
+                currentMenu === idx ? 'genre_list focused_genre' : 'genre_list'
+              }
+              onClick={() => selectTabHandler(idx)}
+              aria-hidden="true"
+            >
+              {menu}
+            </li>
+          ))}
+        </AliceCarousel>
       </div>
     </div>
   );
