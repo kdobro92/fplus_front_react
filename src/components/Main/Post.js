@@ -129,12 +129,13 @@ function Post() {
 
   const clickHeartHandler = (idx) => {
     setLike(!like);
+    const newArr = currentHeart.filter((el) => el.id !== idx);
     setCurrentHeart(idx);
   };
 
   const clickDetailHandler = (e) => {
-    e.stopPropagation();
-    navigate('/w1/musedetail');
+    e.preventDefault();
+    navigate('/musedetail');
   };
 
   return (

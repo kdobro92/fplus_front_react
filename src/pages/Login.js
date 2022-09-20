@@ -7,7 +7,7 @@ function Login({ modalHandler }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [accessToken, setAccessToken] = useState("");
+  // const [accessToken, setAccessToken] = useState('');
 
   const userIdHandler = (e) => {
     setUsername(e.target.value);
@@ -21,7 +21,7 @@ function Login({ modalHandler }) {
   const requestLoginHandler = async () => {
     await axios
       .post(
-        'http://localhost:3000/w1/login',
+        'http://localhost:3000/login_check/fplus',
         { username, password },
         {
           headers: {
@@ -32,7 +32,7 @@ function Login({ modalHandler }) {
       )
       .then((res) => {
         console.log(res);
-        navigate('/w1');
+        navigate('/');
       });
   };
 

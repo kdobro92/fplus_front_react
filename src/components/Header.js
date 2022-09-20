@@ -47,18 +47,23 @@ function Header() {
     setCurrentNav(index);
   };
 
+  const onClickLogo = () => {
+    navigate('/');
+    setCurrentNav(0);
+  };
+
   const data = [
-    <Link to="/w1">
+    <Link to="/">
       <div className="wrap_menu">
         <li className="menu_txt">홈</li>
       </div>
     </Link>,
-    <Link to="/w1/muse">
+    <Link to="/muse">
       <div className="wrap_menu">
         <li className="menu_txt">MUSE</li>
       </div>
     </Link>,
-    <Link to="/w1/audition">
+    <Link to="/audition">
       <div className="wrap_menu">
         <li className="menu_txt">오디션</li>
       </div>
@@ -84,15 +89,13 @@ function Header() {
         </div>
         <div className="wrap_left_nav">
           <div className="left_nav">
-            <Link to="/w1">
-              <li className="nav_list">
-                <img
-                  src="img/fplus_logo.png"
-                  className="nav_list_logo_txt"
-                  alt="logo"
-                />
-              </li>
-            </Link>
+            <li className="nav_list" onClick={onClickLogo} aria-hidden="true">
+              <img
+                src="img/fplus_logo.png"
+                className="nav_list_logo_txt"
+                alt="logo"
+              />
+            </li>
             {data.map((menu, index) => (
               <li
                 key={index}
@@ -117,7 +120,7 @@ function Header() {
               <button type="button" className="icon_btn">
                 <img src="img/message.png" alt="message" />
               </button>
-              <Link to="/w1/mypage">
+              <Link to="/mypage">
                 <li
                   className="nav_login"
                   onClick={modalHandler}
@@ -158,7 +161,7 @@ function Header() {
               >
                 로그인
               </li>
-              <Link to="/w1/signup">
+              <Link to="/signup">
                 <li className="nav_signup">회원가입</li>
               </Link>
             </div>

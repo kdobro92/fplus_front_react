@@ -17,14 +17,14 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/w1" element={<Main />} />
-        <Route path="/w1/muse" element={<Muse />} />
-        <Route path="/w1/musedetail" element={<MuseDetail />} />
-        <Route path="/w1/audition" element={<Audition />} />
-        <Route path="/w1/audidetail" element={<AuditionDetail />} />
-        <Route path="/w1/Login" element={<Login />} />
-        <Route path="/w1/signup" element={<Signup />} />
-        <Route path="/w1/mypage" element={<Mypage />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/muse" element={<Muse />} />
+        <Route path="/musedetail" element={<MuseDetail />} />
+        <Route path="/audition" element={<Audition />} />
+        <Route path="/audidetail" element={<AuditionDetail />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/mypage" element={<Mypage />} />
       </Routes>
       <Footer />
     </>

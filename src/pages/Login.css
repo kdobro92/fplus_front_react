@@ -159,6 +159,7 @@
   line-height: 28px;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
 }
 
 .login_menu {
@@ -191,6 +192,7 @@
   background-color: #ffffff;
   color: #666161;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .line_wrap {

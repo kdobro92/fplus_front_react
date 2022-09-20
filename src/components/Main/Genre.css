@@ -82,13 +82,9 @@
 
 .focused_genre {
   border-radius: 4px;
-  border: 1px solid
-    linear-gradient(
-      238.87deg,
-      rgba(255, 114, 53, 0.9) -41.02%,
-      rgba(84, 51, 212, 0.9) 77.01%
-    );
-  z-index: 2;
+  background-image: url('/public/img/graident.png');
+  z-index: 999;
+  opacity: 0.7;
 }
 
 .genre_txt {

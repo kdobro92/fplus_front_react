@@ -22,14 +22,14 @@ function Filter() {
     'OTT',
   ];
 
-  const [peopleMenu, setPeopelMenu] = useState([
+  const [peopleMenu, setPeopleMenu] = useState([
     { id: 1, name: '뮤직비디오 연기자' },
     { id: 2, name: '웹드라마 연기자' },
     { id: 3, name: '연극단원' },
     { id: 4, name: 'OTT' },
   ]);
 
-  const genres = ['연기', '모델', '뮤지컬', '퍼포먼스', '스텝'];
+  const genres = ['연기', '모델', '뮤지컬', '퍼포먼스', '스텝', '연기', '모델'];
   const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
 
   const [currentGenre, setCurrentGenre] = useState(0);
@@ -80,7 +80,7 @@ function Filter() {
 
   const deleteMenuHandler = (idx) => {
     const newList = peopleMenu.filter((menu) => menu.id !== idx);
-    setPeopelMenu(newList);
+    setPeopleMenu(newList);
   };
 
   return (
@@ -101,7 +101,7 @@ function Filter() {
                     placeholder="손모델, 단원 등 검색해보세요."
                   />
                   <div className="menu_con">
-                    여성
+                    <h4>여성</h4>
                     <input type="checkbox" className="chk_box" />
                   </div>
                   <div className="menu_con">
@@ -120,7 +120,7 @@ function Filter() {
                         <li
                           key={idx}
                           className={
-                            currentGenre === idx ? 'focused_genre' : ''
+                            currentGenre === idx ? 'focused_genre_menu' : ''
                           }
                           onClick={() => selectGenreHandler(idx)}
                           aria-hidden

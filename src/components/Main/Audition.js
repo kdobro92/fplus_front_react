@@ -155,7 +155,7 @@ function Audition() {
         <div className="card_container">
           <div className="img_container">
             {audiArr.map((data, index) => (
-              <Link to="/w1/audidetail">
+              <Link to="/audidetail">
                 <div key={index} className="card_whole">
                   <div className="card_top">
                     <img className="card_img" src={data.image} alt="card" />

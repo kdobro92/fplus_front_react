@@ -107,6 +107,15 @@ p,
   margin-left: 56px;
 }
 
+.menu_con > input {
+  vertical-align: middle;
+}
+
+.menu_con > h4 {
+  display: inline-block;
+}
+
+
 .chk_box {
   width: 20px;
   height: 20px;
@@ -338,7 +347,7 @@ ul {
   cursor: pointer;
 }
 
-.focused_genre {
+.focused_genre_menu {
   background: rgba(84, 51, 212, 0.05);
   color: #5433d4;
   font-weight: 700;

@@ -1,9 +1,26 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 function Filter() {
   const [isToggle, setIsToggle] = useState(false);
+
+  const actorMenu = [
+    '웹드라마 연기자',
+    '드라마 연기자',
+    '연극단원',
+    '드라마 연기자',
+    '연극단원',
+    '웹드라마 연기자',
+    '드라마 연기자',
+    '웹드라마 연기자',
+    '연극단원',
+    '연극단원',
+    '뮤직비디오 연기자',
+    'OTT',
+  ];
+
   const [peopleMenu, setPeopelMenu] = useState([
     { id: 1, name: '뮤직비디오 연기자' },
     { id: 2, name: '웹드라마 연기자' },
@@ -11,11 +28,42 @@ function Filter() {
     { id: 4, name: 'OTT' },
   ]);
 
-  const genres = ['연기', '모델', '뮤지컬', '퍼포먼스', '스텝'];
+  const genres = ['연기', '모델', '뮤지컬', '퍼포먼스', '스텝', '연기', '모델'];
   const sortedMenu = ['관심순', '인기순', '최신순', '팔로우한 MUSE만 보기'];
 
   const [currentGenre, setCurrentGenre] = useState(0);
   const [currentMenu, setCurrentMenu] = useState(0);
+  const [currentDrama, setCurrentDrama] = useState([]);
+  const [currentMusical, setCurrentMusical] = useState([]);
+  const [selectedActor, setSelectedActor] = useState([]);
+
+  const selectDramaHandler = (idx) => {
+    setCurrentDrama(idx);
+  };
+
+  const addTagHandler = (e) => {
+    const newTags = selectedActor.slice();
+    if (newTags.indexOf(e.target.textContent) !== -1) {
+      // newTags = newTags.filter((tag) => tag !== e.target.textContent);
+      return;
+    }
+    newTags.push(e.target.textContent);
+    setSelectedActor([...newTags]);
+  };
+
+  const deleteTagHandler = (e) => {
+    let newTags = selectedActor.slice();
+    if (newTags.indexOf(e.target.textContent) !== -1) {
+      newTags = newTags.filter((tag) => tag !== e.target.textContent);
+    }
+    // let newTags = selectedActor.slice();
+    // newTags = newTags.filter((tag) => tag !== e.target.textContent);
+    setSelectedActor(newTags);
+  };
+
+  const selectMusicalHandler = (idx) => {
+    setCurrentMusical(idx);
+  };
 
   const selectGenreHandler = (idx) => {
     setCurrentGenre(idx);
@@ -71,7 +119,7 @@ function Filter() {
                         <li
                           key={idx}
                           className={
-                            currentGenre === idx ? 'focused_genre' : ''
+                            currentGenre === idx ? 'focused_genre_menu' : ''
                           }
                           onClick={() => selectGenreHandler(idx)}
                           aria-hidden
@@ -89,18 +137,62 @@ function Filter() {
                     <div className="fil_half">
                       <div className="fil_col_half">
                         <div className="fil_row_2">드라마/영화</div>
-                        <div className="fil_row_8">웹드라마 연기자</div>
+                        <div className="fil_row_8">
+                          {actorMenu.map((menu, idx) => (
+                            <li
+                              key={idx}
+                              className={
+                                currentDrama === idx
+                                  ? 'focused_actor_list'
+                                  : 'actor_list'
+                              }
+                              onClick={addTagHandler}
+                              aria-hidden="true"
+                            >
+                              {menu}
+                            </li>
+                          ))}
+                        </div>
                       </div>
                       <div className="fil_col_half">
                         <div className="fil_row_2">연극/뮤지컬</div>
-                        <div className="fil_row_8">웹드라마 연기자</div>
+                        <div className="fil_row_8">
+                          {actorMenu.map((menu, idx) => (
+                            <li
+                              key={menu.id}
+                              className={
+                                currentMusical === idx
+                                  ? 'focused_actor_list'
+                                  : 'actor_list'
+                              }
+                              onClick={() => selectMusicalHandler(idx)}
+                              aria-hidden="true"
+                            >
+                              {menu}
+                            </li>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="filter_right">
-                <div className="fil_right_half_1" />
+                <div className="fil_right_half_1">
+                  {selectedActor.map((menu, idx) => (
+                    <div className="peo_menu_two" key={idx}>
+                      <h4>{menu}</h4>
+                      <button
+                        key={idx}
+                        type="button"
+                        className="del_peo_menu"
+                        onClick={deleteTagHandler}
+                      >
+                        <img src="img/del_peo_menu.png" alt="del" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
                 <div className="fil_right_half_2">
                   <span className="fil_right_txt">공고</span>
                   <span className="fil_right_people">824건</span>
@@ -153,10 +245,11 @@ function Filter() {
                   {menu}
                 </button>
               ))}
-              {peopleMenu.map((menu) => (
+              {peopleMenu.map((menu, idx) => (
                 <div className="peo_menu" key={menu.id}>
                   <h4>{menu.name}</h4>
                   <button
+                    key={idx}
                     type="button"
                     className="del_peo_menu"
                     onClick={() => deleteMenuHandler(menu.id)}
