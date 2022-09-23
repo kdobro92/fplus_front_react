@@ -10,6 +10,7 @@ import AuditionDetail from './pages/AuditionDetail';
 import Login from './pages/Login';
 import Signup from './pages/Signup/Signup';
 import Mypage from './pages/Mypage';
+import MypageRegister from './pages/MypageRegister';
 import './App.css';
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/muse" element={<Muse />} />
-        <Route path="/musedetail" element={<MuseDetail />} />
+        <Route path="/musedetail/:id" element={<MuseDetail />} />
         <Route path="/audition" element={<Audition />} />
-        <Route path="/audidetail" element={<AuditionDetail />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/audidetail/:id" element={<AuditionDetail />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/mypageregister" element={<MypageRegister />} />
       </Routes>
       <Footer />
     </>

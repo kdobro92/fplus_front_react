@@ -1,6 +1,6 @@
 .banner_con {
-  height: 148px;
   position: relative;
+  height: 148px;
 }
 
 .banner_con > img {
@@ -39,4 +39,19 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+}
+
+.modi_pro_btn {
+  position: absolute;
+  right: 80px;
+  top: 80px;
+  border: none;
+  width: 162px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
 }

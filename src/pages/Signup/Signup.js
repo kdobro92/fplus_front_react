@@ -21,7 +21,7 @@ function Signup() {
   // 유효성검사 유저 아이디 정규표현식 || 사용자에게 입력받는 id를 userId 상태관리 변수에 최신화
   const isValidId = (e) => {
     const userIdRegex =
-        /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
     if (userIdRegex.test(e.target.value)) {
       setUserIdError(false);
     } else setUserIdError(true);
@@ -31,7 +31,7 @@ function Signup() {
   // 유효성검사 유저 비밀번호 정규표현식 || 사용자에게 입력받는 pwd를 userPwd 상태관리 변수에 최신화
   const isValidPwd = (e) => {
     const passwordRegex =
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     if (passwordRegex.test(e.target.value)) {
       setPasswordError(false);
     } else setPasswordError(true);
@@ -67,13 +67,22 @@ function Signup() {
 
   // 유저 아이디 중복 검사
   const duplicateUserCheck = async () => {
+    if (email === 'test@test.com') {
+      alert('사용 가능한 아이디입니다.');
+    } else {
+      alert('이미 사용중인 아이디입니다.');
+    }
     if (userIdError) return;
     await axios
-      .get(`http://localhost:3000/emailCheck/${email}/exists`, {
-        headers: {
-          'Content-Type': 'application/json',
+      .get(
+        `http://localhost:3000/emailCheck/${email}/exists`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      }, { withCredentials: true })
+        { withCredentials: true },
+      )
       .then((res) => {
         if (res.data === false) {
           alert('사용 가능한 ID입니다.');
@@ -88,6 +97,8 @@ function Signup() {
   // 서버에 유저 정보를 담아 요청하는 함수
   const signupHandler = async () => {
     if (validation()) return;
+    alert('회원가입이 완료되었습니다.!');
+    navigate('/');
     if (userIdError || passwordError || confirmPasswordError) {
       alert('다시 확인해주세요.');
     } else if (!email || !password || !rePassword) {
@@ -127,7 +138,11 @@ function Signup() {
             아이디<span>(필수)</span>
           </div>
           <div className="id_container">
-            <input type="email" placeholder="이메일 형식" onChange={isValidId} />
+            <input
+              type="email"
+              placeholder="이메일 형식"
+              onChange={isValidId}
+            />
             <button
               type="button"
               className="inval_btn"
@@ -185,7 +200,6 @@ function Signup() {
             </button>
           </div>
         </form>
-
       </section>
     </div>
   );

@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import './Login.css';
 
-function Login({ modalHandler }) {
+function Login({ modalHandler, loginHandler }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -19,31 +20,38 @@ function Login({ modalHandler }) {
 
   // 서버에 로그인 요청
   const requestLoginHandler = async () => {
-    await axios
-      .post(
-        'http://localhost:3000/login_check/fplus',
-        { username, password },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-        { withCredentials: true },
-      )
-      .then((res) => {
-        console.log(res);
-        navigate('/');
-      });
+    if (username === 'test@test.com') {
+      alert('로그인 되었습니다.!');
+      loginHandler();
+    } else {
+      alert('아이디 혹은 비밀번호를 확인해주세요.!');
+    }
+    navigate('/');
+    // await axios
+    //   .post(
+    //     'http://localhost:3000/login_check/fplus',
+    //     { username, password },
+    //     {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //     },
+    //     { withCredentials: true },
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //     navigate('/');
+    //   });
   };
 
   return (
     <div className="modal_background">
       <div className="modal_container">
         <div className="modal_header">
-          <img className="login_img" src="img/login.png" alt="login" />
+          <img className="login_img" src="/img/login.png" alt="login" />
           <img
             className="close_btn"
-            src="img/close.png"
+            src="/img/close.png"
             alt="close"
             onClick={modalHandler}
             aria-hidden="true"
@@ -99,13 +107,13 @@ function Login({ modalHandler }) {
             <div className="social_txt">간편한 소셜가입/로그인</div>
             <div className="social_btn">
               <button type="button" className="kakao_btn">
-                <img src="img/kakao.png" alt="kakao" />
+                <img src="/img/kakao.png" alt="kakao" />
               </button>
               <button type="button" className="naver_btn">
-                <img src="img/naver.png" alt="kakao" />
+                <img src="/img/naver.png" alt="kakao" />
               </button>
               <button type="button" className="apple_btn">
-                <img src="img/apple.png" alt="kakao" />
+                <img src="/img/apple.png" alt="kakao" />
               </button>
             </div>
           </div>

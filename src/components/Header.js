@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react/no-array-index-key */
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -19,16 +20,17 @@ function Header() {
 
   const requsetLogoutHandler = () => {
     setIsLogin(false);
+    modalHandler();
     navigate('/');
   };
 
   const menuArr = [
-    { name: <img src="img/fplus_logo2.png" alt="logo" />, content: '' },
+    { name: <img src="/img/fplus_logo2.png" alt="logo" />, content: '' },
     { name: '프리랜서 코리아', content: '' },
     {
       name: (
         <div className="wrap_meta">
-          <img src="img/meta.png" alt="meta" />
+          <img src="/img/meta.png" alt="meta" />
           <p className="meta_txt">메타라이브</p>
         </div>
       ),
@@ -69,12 +71,13 @@ function Header() {
       </div>
     </Link>,
   ];
+
   return (
     <div>
       <div className="header_container">
         <div className="wrap_header">
           <li className="menu_list">
-            <img src="img/fplus_logo3.png" alt="logo" />
+            <img src="/img/fplus_logo3.png" alt="logo" />
           </li>
           {menuArr.map((menu, index) => (
             <li
@@ -91,7 +94,7 @@ function Header() {
           <div className="left_nav">
             <li className="nav_list" onClick={onClickLogo} aria-hidden="true">
               <img
-                src="img/fplus_logo.png"
+                src="/img/fplus_logo.png"
                 className="nav_list_logo_txt"
                 alt="logo"
               />
@@ -112,13 +115,13 @@ function Header() {
           {isLogin ? (
             <div className="right_nav">
               <button type="button" className="icon_btn">
-                <img src="img/upload.png" alt="upload" />
+                <img src="/img/upload.png" alt="upload" />
               </button>
               <button type="button" className="icon_btn">
-                <img src="img/alert.png" alt="alert" />
+                <img src="/img/alert.png" alt="alert" />
               </button>
               <button type="button" className="icon_btn">
-                <img src="img/message.png" alt="message" />
+                <img src="/img/message.png" alt="message" />
               </button>
               <Link to="/mypage">
                 <li
@@ -140,13 +143,13 @@ function Header() {
           ) : (
             <div className="right_nav">
               <button type="button" className="icon_btn">
-                <img src="img/upload.png" alt="upload" />
+                <img src="/img/upload.png" alt="upload" />
               </button>
               <button type="button" className="icon_btn">
-                <img src="img/alert.png" alt="alert" />
+                <img src="/img/alert.png" alt="alert" />
               </button>
               <button type="button" className="icon_btn">
-                <img src="img/message.png" alt="message" />
+                <img src="/img/message.png" alt="message" />
               </button>
               {isOpen ? (
                 <Login

@@ -1,6 +1,14 @@
+import { useState } from 'react';
+import Modal from './Modal';
 import './Banner.css';
 
 function Banner() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const modalHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="banner_con">
       <img src="img/mypage_banner.png" alt="banner" />
@@ -18,6 +26,10 @@ function Banner() {
           <li>오디션</li>
         </div>
       </div>
+      {isOpen ? <Modal modalHandler={modalHandler} /> : null}
+      <button type="button" className="modi_pro_btn" onClick={modalHandler}>
+        프로필 등록
+      </button>
     </div>
   );
 }

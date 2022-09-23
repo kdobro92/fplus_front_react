@@ -1,14 +1,17 @@
 import { BiPlus } from 'react-icons/bi';
+// import { useState } from 'react';
 import './Sidebar.css';
 
 function Sidebar() {
+  // const [isTrue, setIsTrue] = useState(false);
+
   return (
     <div className="wrap_side">
       <div className="side_con">
         <div className="side_head">
           <img src="img/user_profile.png" alt="profile" />
           <div>
-            <li className="user_name">비비</li>
+            <li className="user_name">-</li>
             <li className="user_inter">관심분야를 선택해주세요</li>
           </div>
         </div>
@@ -23,7 +26,7 @@ function Sidebar() {
           </li>
           <li className="side_mid_list">
             <img src="img/birth.png" alt="place" />
-            <span>1998.07.25</span>
+            <span>-</span>
           </li>
         </div>
         <div className="side_mid_2">

@@ -29,15 +29,16 @@
 }
 
 .wrap_meta {
-  width: 70px;
+  position: relative;
+  width: 100px;
   display: flex;
   align-items: center;
-  position: relative;
+  padding-left: 4px;
 }
 
 .wrap_meta img {
   position: absolute;
-  right: 60px;
+  left: 0px;
   top: -2px;
 }
 
@@ -189,7 +190,7 @@
 }
 
 .right_nav {
-  width: 440px;
+  /* width: 440px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -212,9 +213,10 @@
 .nav_login {
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
   color: #000000;
   padding: 12px 18px 12px 18px;
+  width: 66px;
+  text-align: center;
 }
 
 .nav_login:hover {
@@ -222,13 +224,14 @@
 }
 
 .nav_signup {
+  text-align: center;
+  width: 66px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
   padding: 12px 18px 12px 18px;
   background: #757e89;
   border-radius: 20px;
   color: #ffffff;
   margin-right: 30px;
-  text-align: center;
+  cursor: pointer;
 }
