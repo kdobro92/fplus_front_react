@@ -158,10 +158,6 @@ p,
   overflow: auto;
 }
 
-ul {
-  flex-direction: column;
-}
-
 .fil_col_2 ul > li {
   width: 124px;
   display: flex;

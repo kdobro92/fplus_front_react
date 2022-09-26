@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React, { useRef, useState } from 'react';
-import { MdPhotoCamera } from 'react-icons/md';
-import { AiOutlinePlus } from 'react-icons/ai';
+// import { MdPhotoCamera } from 'react-icons/md';
+// import { AiOutlinePlus } from 'react-icons/ai';
 import './Image.css';
 
 function Image({ setFile_name }) {
@@ -49,10 +49,11 @@ function Image({ setFile_name }) {
         {imageSrc ? (
           imageSrc.map((image) => <img src={image} alt="preview-img" />)
         ) : (
-          <>
-            <MdPhotoCamera size="40" style={{ color: 'lightgray' }} />
-            <AiOutlinePlus size="20" style={{ color: 'gray' }} />
-          </>
+          <img
+            src="img/register_profile_img.png"
+            className="regi_profile_img"
+            alt="profile"
+          />
         )}
       </div>
       {imageSrc && (

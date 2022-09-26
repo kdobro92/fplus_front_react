@@ -1,19 +1,42 @@
+import { useState } from 'react';
 import { BiPlus } from 'react-icons/bi';
-// import { useState } from 'react';
+import Modal from './Modal';
+import Content from './Content';
 import './Sidebar.css';
 
 function Sidebar() {
-  // const [isTrue, setIsTrue] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const modalHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="wrap_side">
       <div className="side_con">
         <div className="side_head">
-          <img src="img/user_profile.png" alt="profile" />
-          <div>
+          <div className="side_head_row1">
+            <img src="img/user_profile.png" alt="profile" />
+          </div>
+          <div className="side_head_row2">
             <li className="user_name">-</li>
             <li className="user_inter">관심분야를 선택해주세요</li>
+            <button
+              type="button"
+              className="modi_pro_btn"
+              onClick={modalHandler}
+            >
+              프로필 등록
+              <span>
+                <img
+                  src="img/profile_regi.png"
+                  className="profile_img"
+                  alt="profile"
+                />
+              </span>
+            </button>
           </div>
+          {isOpen ? <Modal modalHandler={modalHandler} /> : null}
         </div>
         <div className="side_mid">
           <li className="side_mid_list">
@@ -71,6 +94,7 @@ function Sidebar() {
           </button>
         </div>
       </div>
+      <Content />
     </div>
   );
 }

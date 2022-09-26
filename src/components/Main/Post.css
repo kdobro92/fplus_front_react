@@ -150,7 +150,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  z-index: 999;
+  /* z-index: 999; */
 }
 
 .wrap_top {

@@ -1,12 +1,17 @@
 .wrap_side {
-  position: absolute;
-  height: 762px;
-  width: 344px;
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.side_con {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
   background-color: #ffffff;
-  bottom: -10px;
+  border-radius: 10px;
   left: 68px;
+  top: -60px;
+  position: absolute;
+  width: 344px;
 }
 
 .side_head {
@@ -14,6 +19,28 @@
   justify-content: center;
   align-items: center;
   height: 140px;
+  padding-top: 12px;
+}
+
+.side_head_row1 {
+  margin-right: 40px;
+}
+
+.side_head_row2 button {
+  margin-top: 12px;
+}
+
+.modi_pro_btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile_img {
+  position: absolute;
+  top: 110px;
+  left: 288px;
+  padding-right: 8px;
 }
 
 .side_head > img {
@@ -33,6 +60,23 @@
   font-size: 12px;
   line-height: 15px;
   color: rgba(34, 34, 34, 0.8);
+}
+
+.modi_pro_btn {
+  /* position: absolute; */
+  right: 120px;
+  top: 120px;
+  border: #5433d4;
+  width: 128px;
+  height: 28px;
+  background: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  color: #5433d4;
+  cursor: pointer;
+  border: 1px solid red;
+  border: 1px solid #5433d4;
+  border-radius: 10px;
 }
 
 .side_mid {
@@ -85,7 +129,7 @@
 
 .side_body_info > li {
   height: 40px;
-  width: 148px;
+  /* width: 148px; */
   display: flex;
   align-items: center;
 }
