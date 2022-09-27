@@ -1,7 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from 'react';
+import ModalPortfolio from './ModalPortfolio';
 import './Content.css';
 
 function Content() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClickPortfolio = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="wrap_mp_content">
       <div className="content_row_1" />
@@ -16,41 +24,34 @@ function Content() {
             <img src="img/arrow_front.png" alt="more" className="more_img" />
           </div>
         </div>
+        {isOpen ? <ModalPortfolio onClickPortfolio={onClickPortfolio} /> : null}
         <div className="mp_content_img_con">
-          <div className="mp_upload">
-            <input
-              type="file"
-              className="mp_file"
-              src="img/upload_mp.png"
-              accept="image/jpg,image/png,image/jpeg"
-            />
+          <div
+            className="mp_upload"
+            onClick={onClickPortfolio}
+            aria-hidden="true"
+          >
             <img src="img/upload_mp.png" alt="mp_img" />
           </div>
-          <div className="mp_upload">
-            <input
-              type="file"
-              className="mp_file"
-              src="img/upload_mp.png"
-              accept="image/jpg,image/png,image/jpeg"
-            />
+          <div
+            className="mp_upload"
+            onClick={onClickPortfolio}
+            aria-hidden="true"
+          >
             <img src="img/upload_mp.png" alt="mp_img" />
           </div>
-          <div className="mp_upload">
-            <input
-              type="file"
-              className="mp_file"
-              src="img/upload_mp.png"
-              accept="image/jpg,image/png,image/jpeg"
-            />
+          <div
+            className="mp_upload"
+            onClick={onClickPortfolio}
+            aria-hidden="true"
+          >
             <img src="img/upload_mp.png" alt="mp_img" />
           </div>
-          <div className="mp_upload">
-            <input
-              type="file"
-              className="mp_file"
-              src="img/upload_mp.png"
-              accept="image/jpg,image/png,image/jpeg"
-            />
+          <div
+            className="mp_upload"
+            onClick={onClickPortfolio}
+            aria-hidden="true"
+          >
             <img src="img/upload_mp.png" alt="mp_img" />
           </div>
         </div>

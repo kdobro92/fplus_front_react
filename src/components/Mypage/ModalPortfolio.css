@@ -83,17 +83,9 @@
   color: #232120;
 }
 
-.video1 {
+.video {
   margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.body_info_3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
-
-h4 {
+  margin-bottom: 4px;
   align-self: flex-start;
   padding: 0 12px 0px 34px;
 }
@@ -105,12 +97,13 @@ h4 {
   border-radius: 10px;
 }
 
-.body_info2 {
+.body_info2_2 {
   display: flex;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
-  width: 344px;
+  width: 352px;
   height: 88px;
+  margin: 12px;
 }
 
 .body_info2_ul {
@@ -140,6 +133,7 @@ h4 {
 .profile_video {
   width: 344px;
   height: 196px;
+  margin-bottom: 24px;
 }
 
 .flex_row_2 {
@@ -149,11 +143,12 @@ h4 {
   flex-direction: column;
 }
 
-.flex_row_2_2 {
+.flex_row_2_2_2 {
+  margin-top: 48px;
   flex: 1;
 }
 
-.flex_row_2_2 input {
+.flex_row_2_2_2 input {
   width: 344px;
   height: 32px;
   margin: 12px;
@@ -163,56 +158,54 @@ h4 {
   cursor: pointer;
 }
 
-.ccc {
+.flew_row_title {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0 12px;
+}
+
+.ccc_ccc {
   position: relative;
 }
 
-.flex_row_2_2 > .ccc input {
+.ccc_ccc img {
+  position: absolute;
+  top: 28px;
+}
+
+.flex_row_2_2_2 > .ccc_ccc input {
   text-align: start;
   border: 1px solid #d9d9d9;
 }
 
-.audi_arrow {
-  position: absolute;
-  top: 28px;
-  right: 40px;
-  cursor: pointer;
-}
-
-.belong_arrow {
-  position: absolute;
-  top: 58px;
-  right: 40px;
-  cursor: pointer;
-}
-
-.aaa img {
+.bbb_bbb img {
   width: 30px;
   height: 30px;
 }
 
-.bbb {
-  padding: 20px 12px;
+.bbb_bbb {
+  align-self: flex-start;
+  padding: 12px 32px;
 }
 
-.bbb img:nth-child(1) {
+.bbb_bbb img:nth-child(1) {
   margin-right: 20px;
 }
 
-.flex_row_2_2 > h4 {
+.flex_row_2_2_2 > h4 {
   padding: 0px 12px 0 12px;
   font-size: 16px;
 }
 
-.flex_row_2_2:nth-child(1) {
+.flex_row_2_2_2:nth-child(1) {
   padding: 48px 12px 0 12px;
 }
 
-.flex_row_2_2 > div h4 {
+.flex_row_2_2_2 > div h4 {
   padding: 12px 12px 0 12px;
 }
 
-.flex_row_2_2 > div input {
+.flex_row_2_2_2 > div input {
   text-align: center;
   border-radius: 8px;
   border: 1px dashed #424242;

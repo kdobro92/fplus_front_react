@@ -67,15 +67,15 @@ function Signup() {
 
   // 유저 아이디 중복 검사
   const duplicateUserCheck = async () => {
-    if (email === 'test@test.com') {
-      alert('사용 가능한 아이디입니다.');
-    } else {
-      alert('이미 사용중인 아이디입니다.');
-    }
+    // if (email === 'test@test.com') {
+    //   alert('사용 가능한 아이디입니다.');
+    // } else {
+    //   alert('이미 사용중인 아이디입니다.');
+    // }
     if (userIdError) return;
     await axios
       .get(
-        `http://localhost:3000/emailCheck/${email}/exists`,
+        `${process.env.REACT_APP_API_URL}/emailCheck/${email}/exists`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ function Signup() {
     } else {
       await axios
         .post(
-          'http://localhost:3000/signup',
+          `${process.env.REACT_APP_API_URL}/signup`,
           {
             email,
             password,
@@ -124,7 +124,7 @@ function Signup() {
         .then((res) => {
           console.log(res.data);
           alert('회원가입이 완료되었습니다.');
-          navigate('/main');
+          navigate('/');
         });
     }
   };

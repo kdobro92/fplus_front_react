@@ -2,17 +2,23 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Content from './Content';
+import Modal from './Modal';
 import audiData from '../../assets/dummyAudition';
 import './Intro.css';
 
 function Intro() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
   const [auditionList, setAuditionList] = useState(audiData);
   const [currentImg, setCurrentImg] = useState(audiData[id].audi_image);
   const [currentDetailImg, setCurrentDetailImg] = useState(
     audiData[id].audi_detail_img,
   );
+
+  const onClickModalHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   const goBack = () => {
     navigate(-1);
@@ -79,7 +85,10 @@ function Intro() {
               <li className="audi_type">결과 발표</li>
               <li className="audi_value">{auditionList[id].result}</li>
             </div>
-            <button type="button">오디션 지원하기</button>
+            {isOpen && <Modal onClickModalHandler={onClickModalHandler} />}
+            <button type="button" onClick={onClickModalHandler}>
+              오디션 지원하기
+            </button>
           </div>
         </div>
       </div>

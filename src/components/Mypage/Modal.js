@@ -37,7 +37,7 @@ function Modal({ modalHandler }) {
             <div className="flex_row_1">
               <h3>프로필 대표이미지</h3>
               <Image image={file_name} setFile_name={setFile_name} />
-              <h4>신체정보(선택)</h4>
+              <h4 className="body_info_3">신체정보(선택)</h4>
               <div className="body_info2">
                 <ul className="body_info2_ul">
                   <li>
@@ -66,7 +66,7 @@ function Modal({ modalHandler }) {
                   </li>
                 </ul>
               </div>
-              <h4>영상</h4>
+              <h4 className="video1">영상</h4>
               <div className="profile_video">
                 <img src="img/register_profile_video.png" alt="profile" />
               </div>
@@ -74,9 +74,6 @@ function Modal({ modalHandler }) {
             <div className="flex_row_2">
               <div className="flex_row_2_2">
                 <h4>나의 상태</h4>
-                {/* {isOpenModal ? (
-                  <DetailModal detailModalHandler={detailModalHandler} />
-                ) : null} */}
                 <div className="ccc">
                   <input type="text" placeholder="오디션을 찾고 있어요." />
                   <img

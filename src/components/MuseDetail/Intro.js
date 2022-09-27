@@ -2,17 +2,23 @@
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Modal from './Modal';
 import userData from '../../assets/dummyData';
 import './Intro.css';
 
 function Intro() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
   const [userList, setUserList] = useState(userData);
   const [currentImg, setCurrentImg] = useState(userData[id].images[0]);
 
   const clickImageHandler = (idx) => {
     setCurrentImg(userData[id].images[idx]);
+  };
+
+  const onClickModalHandler = () => {
+    setIsOpen(!isOpen);
   };
 
   const goBack = () => {
@@ -116,7 +122,12 @@ function Intro() {
                   </li>
                 </div>
               </div>
-              <button type="button" className="sug_btn">
+              {isOpen && <Modal onClickModalHandler={onClickModalHandler} />}
+              <button
+                type="button"
+                className="sug_btn"
+                onClick={onClickModalHandler}
+              >
                 오디션 제안하기
               </button>
             </div>

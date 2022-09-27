@@ -50,6 +50,7 @@
 
 .audi_info_con_row_2 > button {
   border: none;
+  cursor: pointer;
 }
 
 .audi_row_con {
