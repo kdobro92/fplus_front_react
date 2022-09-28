@@ -67,22 +67,13 @@ function Signup() {
 
   // 유저 아이디 중복 검사
   const duplicateUserCheck = async () => {
-    // if (email === 'test@test.com') {
-    //   alert('사용 가능한 아이디입니다.');
-    // } else {
-    //   alert('이미 사용중인 아이디입니다.');
-    // }
     if (userIdError) return;
     await axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/emailCheck/${email}/exists`,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      .get(`${process.env.REACT_APP_API_URL}/emailCheck/${email}/exists`, {
+        headers: {
+          'Content-Type': 'application/json',
         },
-        { withCredentials: true },
-      )
+      })
       .then((res) => {
         if (res.data === false) {
           alert('사용 가능한 ID입니다.');
@@ -97,12 +88,13 @@ function Signup() {
   // 서버에 유저 정보를 담아 요청하는 함수
   const signupHandler = async () => {
     if (validation()) return;
-    alert('회원가입이 완료되었습니다.!');
-    navigate('/');
-    if (userIdError || passwordError || confirmPasswordError) {
+    // 에러메세지가 있고, 내용이 있으면
+    if (
+      (userIdError && email !== undefined) ||
+      (passwordError && password !== undefined) ||
+      (confirmPasswordError && confirmPasswordError !== undefined)
+    ) {
       alert('다시 확인해주세요.');
-    } else if (!email || !password || !rePassword) {
-      alert('모든 항목은 필수 입니다.');
     } else if (password !== rePassword) {
       alert('비번확인');
     } else {
@@ -119,7 +111,6 @@ function Signup() {
               'Content-Type': 'application/json',
             },
           },
-          { withCredentials: true },
         )
         .then((res) => {
           console.log(res.data);

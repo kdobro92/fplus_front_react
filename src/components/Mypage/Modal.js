@@ -8,7 +8,14 @@ import './Modal.css';
 
 function Modal({ modalHandler }) {
   const navigate = useNavigate();
-  const [file_name, setFile_name] = useState('');
+  const [userStatus, setUserStatus] = useState('');
+  const [userIntro, setUserIntro] = useState('');
+  const [userTeam, setUserTeam] = useState('');
+  const [userJob, setUserJob] = useState('');
+  const [userPlace, setUserPlace] = useState('');
+  const [userCareer, setUserCareer] = useState('');
+  const [userJoin, setUserJoin] = useState('');
+  const [userImage, setUserImage] = useState('');
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const requestRegister = () => {
@@ -36,7 +43,7 @@ function Modal({ modalHandler }) {
           <div className="divide-half">
             <div className="flex_row_1">
               <h3>프로필 대표이미지</h3>
-              <Image image={file_name} setFile_name={setFile_name} />
+              <Image image={userImage} setUserImage={setUserImage} />
               <h4 className="body_info_3">신체정보(선택)</h4>
               <div className="body_info2">
                 <ul className="body_info2_ul">

@@ -1,10 +1,8 @@
 /* eslint-disable camelcase */
 import React, { useRef, useState } from 'react';
-// import { MdPhotoCamera } from 'react-icons/md';
-// import { AiOutlinePlus } from 'react-icons/ai';
 import './Image.css';
 
-function Image({ setFile_name }) {
+function Image({ setUserImage }) {
   const inputImageRef = useRef(null);
   const [imageSrc, setImageSrc] = useState('');
 
@@ -17,7 +15,7 @@ function Image({ setFile_name }) {
     if (Object.keys(nowSelectImageList).length > 4) {
       alert('이미지는 최대 4장까지 업로드 가능합니다.');
     }
-    setFile_name(nowSelectImageList);
+    setUserImage(nowSelectImageList);
     const nowImageURLList = [...imageSrc];
     for (let i = 0; i < nowSelectImageList.length; i += 1) {
       const nowImageUrl = URL.createObjectURL(nowSelectImageList[i]);
@@ -28,7 +26,7 @@ function Image({ setFile_name }) {
 
   const deleteImageHandler = () => {
     setImageSrc('');
-    setFile_name('');
+    setUserImage('');
   };
 
   return (
