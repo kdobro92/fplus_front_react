@@ -20,10 +20,9 @@ function Header() {
   };
 
   const requestLogoutHandler = () => {
-    axios.get(`${process.env.REACT_APP_API_URL}/logout`, null).then((res) => {
+    axios.get('/logout/fplus', null).then((res) => {
       console.log(res);
       setIsLogin(false);
-      modalHandler();
       navigate('/');
     });
   };

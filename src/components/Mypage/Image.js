@@ -2,10 +2,10 @@
 import { useRef, useState } from 'react';
 import './Image.css';
 
-function Image({ inputValue, setInputValue }) {
+function Image({ setInputValue }) {
   const imgRef = useRef(null);
   const [imageUrl, setImageUrl] = useState(null);
-  inputValue.image = imageUrl;
+  // inputValue.image = imageUrl;
 
   const fileInputHandler = () => {
     imgRef.current.click();

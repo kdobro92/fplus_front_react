@@ -100,8 +100,7 @@ function Signup() {
     } else {
       await axios
         .post(
-          `${process.env.REACT_APP_API_URL}/signup`,
-          null,
+          '/save/user',
           {
             email,
             password,

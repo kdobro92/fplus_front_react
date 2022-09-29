@@ -139,7 +139,7 @@
 
 .flex_row_2 {
   flex: 1;
-  padding: 12px;
+  padding-top: 56px;
   display: flex;
   flex-direction: column;
 }

@@ -143,6 +143,10 @@
   cursor: pointer;
 }
 
+.navmenu:nth-child(4) {
+  width: 48px;
+}
+
 .focused_nav {
   height: 62px;
   border-top: 2px solid #ffffff;

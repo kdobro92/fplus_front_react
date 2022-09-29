@@ -1,15 +1,24 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
-function Login({ modalHandler }) {
+function Login({ modalHandler, loginHandler }) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  const [email, setUsername] = useState('');
+  // const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [userInfo, setUserInfo] = useState('');
+  // console.log(userInfo);
+  // const saveData = () => {
+  //   const userObj = { email: userName };
+  //   window.localStorage.setItem('userName', JSON.stringify(userObj));
+  // };
+  // const onChange = (e) => {
+  //   setUserName(e.target.value);
+  // };
   // const [accessToken, setAccessToken] = useState('');
-
   const userIdHandler = (e) => {
     setUsername(e.target.value);
   };
@@ -22,17 +31,23 @@ function Login({ modalHandler }) {
   const requestLoginHandler = async () => {
     await axios
       .post(
-        `${process.env.REACT_APP_API_URL}/login`,
-        { username, password },
+        '/login/fplus',
+        {
+          email,
+          password,
+        },
         {
           headers: {
             'Content-Type': 'application/json',
           },
         },
-        { withCredentials: true },
       )
       .then((res) => {
-        console.log(res);
+        console.log(res.data.email);
+        setUserInfo(res.data.email);
+        alert('로그인 되었습니다.');
+        modalHandler();
+        loginHandler();
         navigate('/');
       });
   };
