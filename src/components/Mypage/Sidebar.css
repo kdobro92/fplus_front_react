@@ -26,10 +26,6 @@
   margin-right: 40px;
 }
 
-.side_head_row2 button {
-  margin-top: 12px;
-}
-
 .modi_pro_btn {
   display: flex;
   justify-content: space-around;
@@ -38,9 +34,10 @@
 
 .profile_img {
   position: absolute;
-  top: 110px;
-  left: 288px;
+  top: 20px;
+  right: 20px;
   padding-right: 8px;
+  cursor: pointer;
 }
 
 .side_head > img {

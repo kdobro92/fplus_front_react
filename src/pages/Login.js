@@ -1,24 +1,17 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import './Login.css';
 
 function Login({ modalHandler, loginHandler }) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setUsername] = useState('');
-  // const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [userInfo, setUserInfo] = useState('');
-  // console.log(userInfo);
-  // const saveData = () => {
-  //   const userObj = { email: userName };
-  //   window.localStorage.setItem('userName', JSON.stringify(userObj));
-  // };
-  // const onChange = (e) => {
-  //   setUserName(e.target.value);
-  // };
   // const [accessToken, setAccessToken] = useState('');
+
   const userIdHandler = (e) => {
     setUsername(e.target.value);
   };
@@ -26,7 +19,6 @@ function Login({ modalHandler, loginHandler }) {
   const userPwdHandler = (e) => {
     setPassword(e.target.value);
   };
-
   // 서버에 로그인 요청
   const requestLoginHandler = async () => {
     await axios
@@ -43,8 +35,11 @@ function Login({ modalHandler, loginHandler }) {
         },
       )
       .then((res) => {
-        console.log(res.data.email);
-        setUserInfo(res.data.email);
+        dispatch({
+          type: 'userInfo/setUpdateUserInfo',
+          payload: res.data,
+        });
+        console.log(res.data);
         alert('로그인 되었습니다.');
         modalHandler();
         loginHandler();
