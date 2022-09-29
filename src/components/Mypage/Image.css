@@ -1,4 +1,5 @@
 .modal-image-container {
+  position: relative;
   margin-top: 12px;
   height: 344px;
   width: 344px;
@@ -8,13 +9,10 @@
   cursor: pointer;
 }
 
-.regi_profile_img {
-  width: 344px;
-  height: 344px;
-}
-
 .image-inner {
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
 }
 
@@ -23,16 +21,16 @@
 }
 
 .btn-delete-image {
-  border-radius: 5px;
   position: absolute;
   border: 1px solid #adadad;
   width: 60px;
   height: 20px;
   font-size: 12px;
-  top: 640px;
+  top: 352px;
   background: #fff;
   color: #adadad;
   letter-spacing: 1pt;
+  border-radius: 5px;
 }
 
 .btn-delete-image:hover {

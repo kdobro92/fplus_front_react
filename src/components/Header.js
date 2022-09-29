@@ -2,6 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
 import Login from '../pages/Login';
 import './Header.css';
 
@@ -18,10 +19,13 @@ function Header() {
     setIsLogin(!isLogin);
   };
 
-  const requsetLogoutHandler = () => {
-    setIsLogin(false);
-    modalHandler();
-    navigate('/');
+  const requestLogoutHandler = () => {
+    axios.get(`${process.env.REACT_APP_API_URL}/logout`, null).then((res) => {
+      console.log(res);
+      setIsLogin(false);
+      modalHandler();
+      navigate('/');
+    });
   };
 
   const menuArr = [
@@ -134,7 +138,7 @@ function Header() {
               </Link>
               <li
                 className="nav_signup"
-                onClick={requsetLogoutHandler}
+                onClick={requestLogoutHandler}
                 aria-hidden="true"
               >
                 로그아웃

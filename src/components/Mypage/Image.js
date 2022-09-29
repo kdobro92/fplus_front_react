@@ -1,51 +1,51 @@
 /* eslint-disable camelcase */
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './Image.css';
 
-function Image({ setUserImage }) {
-  const inputImageRef = useRef(null);
-  const [imageSrc, setImageSrc] = useState('');
+function Image({ inputValue, setInputValue }) {
+  const imgRef = useRef(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  inputValue.image = imageUrl;
 
-  const clickHandler = () => {
-    inputImageRef.current.click();
+  const fileInputHandler = () => {
+    imgRef.current.click();
   };
 
-  const imageUploadHandler = (e) => {
-    const nowSelectImageList = e.target.files;
-    if (Object.keys(nowSelectImageList).length > 4) {
-      alert('이미지는 최대 4장까지 업로드 가능합니다.');
-    }
-    setUserImage(nowSelectImageList);
-    const nowImageURLList = [...imageSrc];
-    for (let i = 0; i < nowSelectImageList.length; i += 1) {
-      const nowImageUrl = URL.createObjectURL(nowSelectImageList[i]);
-      nowImageURLList.push(nowImageUrl);
-    }
-    setImageSrc(nowImageURLList);
+  const uploadProfile = () => {
+    const reader = new FileReader();
+    const file = imgRef.current.files[0];
+
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImageUrl(reader.result);
+      // console.log('이미지주소', reader.result);
+    };
   };
 
   const deleteImageHandler = () => {
-    setImageSrc('');
-    setUserImage('');
+    setImageUrl('');
+    setInputValue({
+      image: '',
+    });
   };
 
   return (
     <div className="modal-image-container">
       <div
-        className={imageSrc ? 'image-inner hidden' : 'image-inner'}
+        className={imageUrl ? 'image-inner hidden' : 'image-inner'}
         aria-hidden="true"
-        onClick={clickHandler}
+        onClick={fileInputHandler}
       >
         <input
           type="file"
+          name="file"
           className="insert-image"
           accept="image/jpg,image/png,image/jpeg"
-          onChange={imageUploadHandler}
-          ref={inputImageRef}
-          multiple
+          onChange={uploadProfile}
+          ref={imgRef}
         />
-        {imageSrc ? (
-          imageSrc.map((image) => <img src={image} alt="preview-img" />)
+        {imageUrl ? (
+          <img src={imageUrl} alt="preview-img" />
         ) : (
           <img
             src="img/register_profile_img.png"
@@ -54,7 +54,7 @@ function Image({ setUserImage }) {
           />
         )}
       </div>
-      {imageSrc && (
+      {imageUrl && (
         <button
           type="button"
           className="btn-delete-image"

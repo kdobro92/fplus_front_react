@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import './Login.css';
 
-function Login({ modalHandler, loginHandler }) {
+function Login({ modalHandler }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,28 +20,21 @@ function Login({ modalHandler, loginHandler }) {
 
   // 서버에 로그인 요청
   const requestLoginHandler = async () => {
-    if (username === 'test@test.com') {
-      alert('로그인 되었습니다.!');
-      loginHandler();
-    } else {
-      alert('아이디 혹은 비밀번호를 확인해주세요.!');
-    }
-    navigate('/');
-    // await axios
-    //   .post(
-    //     'http://localhost:3000/login_check/fplus',
-    //     { username, password },
-    //     {
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //     },
-    //     { withCredentials: true },
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //     navigate('/');
-    //   });
+    await axios
+      .post(
+        `${process.env.REACT_APP_API_URL}/login`,
+        { username, password },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+        { withCredentials: true },
+      )
+      .then((res) => {
+        console.log(res);
+        navigate('/');
+      });
   };
 
   return (
@@ -93,11 +86,9 @@ function Login({ modalHandler, loginHandler }) {
           <button type="button" className="find_id">
             아이디 찾기
           </button>
-          <Link to="/w1/signup">
-            <button type="button" className="register">
-              회원가입
-            </button>
-          </Link>
+          <button type="button" className="register">
+            회원가입
+          </button>
         </div>
         <div className="line_wrap">
           <span className="login_line" />
