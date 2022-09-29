@@ -18,8 +18,8 @@ function Modal({ modalHandler }) {
     career: '',
     join: '',
     social: '',
-    image: '',
-    video: '',
+    // image: '',
+    // video: '',
   });
 
   const onChangeHandler = (e) => {
@@ -47,8 +47,8 @@ function Modal({ modalHandler }) {
         place: inputValue.place,
         career: inputValue.career,
         join: inputValue.join,
-        image: inputValue.image,
-        video: inputValue.video,
+        // image: inputValue.image,
+        // video: inputValue.video,
       };
       try {
         await axios
@@ -133,7 +133,7 @@ function Modal({ modalHandler }) {
                     url={inputValue.video}
                     width="344px"
                     height="196px"
-                    playing="true"
+                    playing="false"
                   />
                 </div>
               ) : (
