@@ -16,7 +16,13 @@ module.exports = {
     'import/no-unresolved': 'off',
     'react/prop-types': 'off',
     'no-param-reassign': [2, { props: false }],
+    'global-require': 0,
+    'linebreak-style': [
+      'error',
+      require('os').EOL === '\r\n' ? 'windows' : 'unix',
+    ],
   },
+
   settings: {
     resolver: {
       node: {

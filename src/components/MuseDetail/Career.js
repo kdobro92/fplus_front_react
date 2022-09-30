@@ -10,7 +10,7 @@ function Career() {
             <h3 className="career_txt">참여/수상경력</h3>
             <button type="button" className="career_more_btn">
               <span className="more_txt">더보기</span>
-              <img src="img/arrow_front.png" alt="more" className="more_img" />
+              <img src="/img/arrow_front.png" alt="more" className="more_img" />
             </button>
           </div>
           <div className="car_content">
@@ -55,35 +55,35 @@ function Career() {
             <h3 className="career_txt">대표작</h3>
             <button type="button" className="more_right_btn">
               <span className="more_right_txt">더보기</span>
-              <img src="img/arrow_front.png" alt="more" className="more_img" />
+              <img src="/img/arrow_front.png" alt="more" className="more_img" />
             </button>
           </div>
           <div className="wrap_mp_con">
             <div className="mp_con">
               <li className="mp_list">
                 <img
-                  src="img/mp_list1.png"
+                  src="/img/mp_list1.png"
                   alt="mp_list"
                   className="mp_list_img"
                 />
               </li>
               <li className="mp_list">
                 <img
-                  src="img/mp_list2.png"
+                  src="/img/mp_list2.png"
                   alt="mp_list"
                   className="mp_list_img"
                 />
               </li>
               <li className="mp_list">
                 <img
-                  src="img/mp_list3.png"
+                  src="/img/mp_list3.png"
                   alt="mp_list"
                   className="mp_list_img"
                 />
               </li>
               <li className="mp_list">
                 <img
-                  src="img/mp_list4.png"
+                  src="/img/mp_list4.png"
                   alt="mp_list"
                   className="mp_list_img"
                 />
@@ -94,7 +94,7 @@ function Career() {
             <div className="video_con">영상</div>
             <button type="button" className="more_txt_btn">
               <span className="more_txt_video">더보기</span>
-              <img src="img/arrow_front.png" alt="more" className="more_img" />
+              <img src="/img/arrow_front.png" alt="more" className="more_img" />
             </button>
           </div>
           <video width="672" loop autoPlay muted className="video">

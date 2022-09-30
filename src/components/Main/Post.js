@@ -1,164 +1,77 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import json from '../../assets/dummyData';
 import './Post.css';
 
-function Post() {
-  const postArr = [
-    {
-      name: '허안나',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post1.png',
-    },
-    {
-      name: '김철우',
-      type: '음향스텝',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '음향',
-      image: 'img/post2.png',
-    },
-    {
-      name: '최민석',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '태그',
-      image: 'img/post3.png',
-    },
-    {
-      name: '김소영',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '태그',
-      image: 'img/post4.png',
-    },
-    {
-      name: '진수진',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '태그',
-      image: 'img/post5.png',
-    },
-  ];
-  const postArr2 = [
-    {
-      name: '서지우',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post6.png',
-    },
-    {
-      name: '지소라',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post7.png',
-    },
-    {
-      name: '김유진',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post8.png',
-    },
-    {
-      name: '이미주',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post9.png',
-    },
-    {
-      name: '이여름',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post10.png',
-    },
-  ];
-  const postArr3 = [
-    {
-      name: '구자영',
-      type: '배우 모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post11.png',
-    },
-    {
-      name: '하유주',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post12.png',
-    },
-    {
-      name: '쥬나',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post13.png',
-    },
-    {
-      name: '곽지철',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post14.png',
-    },
-    {
-      name: '반휘혈',
-      type: '배우•모델',
-      text: '"저의 굉장한 끈기로 어떤 역할이든 소화해 낼 수 있는 배우가 될 수 있도록 노력하겠습니다."',
-      tag: '피팅',
-      image: 'img/post15.png',
-    },
-  ];
-
+function Post({ currentMenu }) {
+  const navigate = useNavigate();
+  const [userList, setUserList] = useState(json);
   const [like, setLike] = useState(false);
-  const [currentHeart, setCurrentHeart] = useState();
+  const [currentHeart, setCurrentHeart] = useState(0);
+  const [hearted, setHearted] = useState([]);
+  const heart = { heart: 1 };
 
-  const clickHeartHandler = (index) => {
+  const clickHeartHandler = (idx) => (e) => {
+    e.stopPropagation();
     setLike(!like);
-    setCurrentHeart(index);
+    setCurrentHeart(idx);
+    setHearted([...hearted, Object.assign(userList[idx], heart)]);
   };
+
+  const clickDetailHandler = (idx) => {
+    navigate(`/musedetail/${idx}`);
+  };
+
+  const goToMuse = () => {
+    navigate('/muse');
+  };
+
+  const theaterFiltered = userList.filter((el) => el.genre === '연극');
+  const movieFiltered = userList.filter((el) => el.genre === '영화');
+  const musicalFiltered = userList.filter((el) => el.genre === '뮤지컬');
+  const tvFiltered = userList.filter((el) => el.genre === 'tv방송');
+  const internetFiltered = userList.filter((el) => el.genre === '인터넷플랫폼');
+  const singerFiltered = userList.filter((el) => el.genre === '가수');
+  const stepFiltered = userList.filter((el) => el.genre === '스텝');
 
   return (
     <>
-      <div className="wrap_filter">
-        <div className="filter_container">
-          <div className="filter_list">
-            <button type="button" className="btn_list">
-              정렬방식 :
-            </button>
-            <button type="button" className="btn_list">
-              관심순
-            </button>
-            <button type="button" className="btn_list">
-              인기순
-            </button>
-            <button type="button" className="btn_list">
-              최신순
-            </button>
+      <div className="wrap_title">
+        <div className="wrap_title_con">
+          <div className="title_con">
+            <span>
+              <img src="img/sound.png" alt="sound" />
+            </span>
+            오늘의 HOT한 MUSE!!
+          </div>
+          <div className="more_muse_txt" onClick={goToMuse} aria-hidden="true">
+            더보기
           </div>
         </div>
       </div>
       <div className="wrap_post">
         <div className="post_container">
-          {postArr.map((data, index) => (
-            <Link to="/musedetail">
-              <div className="post_list" key={index}>
+          {currentMenu === 0 &&
+            userList.map((list) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
                 <div className="post_img_container">
-                  <img className="post_img" src={data.image} alt="post" />
+                  <img className="post_img" src={list.image} alt="post" />
                   <button
                     type="button"
                     className="heart_btn"
-                    onClick={() => clickHeartHandler(index)}
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
                   >
                     <img
                       src={
-                        like && currentHeart === index
+                        like && currentHeart === list.id
                           ? 'img/heart_red.png'
                           : 'img/heart.png'
                       }
@@ -167,76 +80,244 @@ function Post() {
                   </button>
                 </div>
                 <div className="wrap_top">
-                  <li className="post_name">{data.name}</li>
-                  <li className="post_type">{data.type}</li>
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
                 </div>
-                <li className="post_txt">{data.text}</li>
-                <li className="post_tag">{data.tag}</li>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
               </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="wrap_post">
-        <div className="post_container">
-          {postArr2.map((data, index) => (
-            <div className="post_list" key={index}>
-              <div className="post_img_container">
-                <img className="post_img" src={data.image} alt="post" />
-                <button
-                  type="button"
-                  className="heart_btn"
-                  onClick={() => clickHeartHandler(index)}
-                >
-                  <img
-                    src={
-                      like && currentHeart === index
-                        ? 'img/heart_red.png'
-                        : 'img/heart.png'
-                    }
-                    alt="heart"
-                  />
-                </button>
+            ))}
+          {currentMenu === 1 &&
+            theaterFiltered.map((list) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
               </div>
-              <div className="wrap_top">
-                <li className="post_name">{data.name}</li>
-                <li className="post_type">{data.type}</li>
+            ))}
+          {currentMenu === 2 &&
+            movieFiltered.map((list) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
               </div>
-              <li className="post_txt">{data.text}</li>
-              <li className="post_tag">{data.tag}</li>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="wrap_post">
-        <div className="post_container">
-          {postArr3.map((data, index) => (
-            <div key={index} className="post_list">
-              <div className="post_img_container">
-                <img className="post_img" src={data.image} alt="post" />
-                <button
-                  type="button"
-                  className="heart_btn"
-                  onClick={() => clickHeartHandler(index)}
-                >
-                  <img
-                    src={
-                      like && currentHeart === index
-                        ? 'img/heart_red.png'
-                        : 'img/heart.png'
-                    }
-                    alt="heart"
-                  />
-                </button>
+            ))}
+          {currentMenu === 3 &&
+            musicalFiltered.map((list, index) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
               </div>
-              <div className="wrap_top">
-                <li className="post_name">{data.name}</li>
-                <li className="post_type">{data.type}</li>
+            ))}
+          {currentMenu === 4 &&
+            tvFiltered.map((list, index) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
               </div>
-              <li className="post_txt">{data.text}</li>
-              <li className="post_tag">{data.tag}</li>
-            </div>
-          ))}
+            ))}
+          {currentMenu === 5 &&
+            internetFiltered.map((list, index) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={clickHeartHandler}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
+              </div>
+            ))}
+          {currentMenu === 6 &&
+            singerFiltered.map((list, index) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
+              </div>
+            ))}
+          {currentMenu === 7 &&
+            stepFiltered.map((list, index) => (
+              <div
+                key={list.id}
+                className="post_list"
+                aria-hidden="true"
+                onClick={() => clickDetailHandler(list.id)}
+              >
+                <div className="post_img_container">
+                  <img className="post_img" src={list.image} alt="post" />
+                  <button
+                    type="button"
+                    className="heart_btn"
+                    onClick={(e) => clickHeartHandler(list.id)(e)}
+                  >
+                    <img
+                      src={
+                        like && currentHeart === list.id
+                          ? 'img/heart_red.png'
+                          : 'img/heart.png'
+                      }
+                      alt="heart"
+                    />
+                  </button>
+                </div>
+                <div className="wrap_top">
+                  <li className="post_name">{list.name}</li>
+                  <li className="post_type">{list.type}</li>
+                </div>
+                <li className="post_txt">{list.description}</li>
+                <li className="post_tag">{list.tag}</li>
+              </div>
+            ))}
         </div>
       </div>
     </>

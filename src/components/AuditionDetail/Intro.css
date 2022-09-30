@@ -46,8 +46,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* align-items: center; */
-  /* margin-left: 40px; */
+}
+
+.audi_info_con_row_2 > button {
+  border: none;
+  cursor: pointer;
 }
 
 .audi_row_con {

@@ -1,6 +1,6 @@
 import './Content.css';
 
-function Content() {
+function Content({ currentDetailImg }) {
   return (
     <>
       <div className="wrap_audi_content">
@@ -8,7 +8,7 @@ function Content() {
       </div>
       <div className="audi_img_con">
         <div className="audi_img">
-          <img src="img/audi_detail_img.png" alt="audi_detail" />
+          <img src={currentDetailImg} alt="audi_detail" />
         </div>
       </div>
     </>

@@ -1,6 +1,12 @@
 .wrap_banner {
   margin-top: 100px;
   height: 148px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap_banner > img {
+  width: 100%;
 }
 
 .fil_container {
@@ -13,8 +19,8 @@
   width: 1760px;
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 20px;
   line-height: 20px;
   color: #757e89;
   margin-top: 40px;

@@ -27,6 +27,7 @@
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  border: none;
 }
 
 .invalid-input {
@@ -164,4 +165,5 @@ span {
   line-height: 20px;
   cursor: pointer;
   margin-top: 78px;
+  border: none;
 }

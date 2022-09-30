@@ -1,33 +1,47 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import Modal from './Modal';
+import userData from '../../assets/dummyData';
 import './Intro.css';
 
 function Intro() {
-  const images = [
-    'img/detail1.png',
-    'img/detail2.png',
-    'img/detail3.png',
-    'img/detail4.png',
-  ];
-
-  const [currentImg, setCurrentImg] = useState(images[0]);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const [userList, setUserList] = useState(userData);
+  const [currentImg, setCurrentImg] = useState(userData[id].images[0]);
 
   const clickImageHandler = (idx) => {
-    setCurrentImg(images[idx]);
+    setCurrentImg(userData[id].images[idx]);
+  };
+
+  const onClickModalHandler = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const goBack = () => {
+    navigate(-1);
   };
 
   return (
     <>
       <div className="intro_menu">
         <div className="intro_con">
-          <img src="img/arrow_back.png" alt="back" />
+          <img
+            src="/img/arrow_back.png"
+            alt="back"
+            onClick={goBack}
+            aria-hidden="true"
+          />
           <span className="intro_menu_txt">MUSE</span>
         </div>
       </div>
       <div className="wrap_intro_profile">
         <div className="intro_profile">
           <div className="profile_row_1">
-            {images.map((img, idx) => (
+            {userList[id].images.map((img, idx) => (
               <li
                 key={idx}
                 className="img_detail"
@@ -44,27 +58,27 @@ function Intro() {
             </div>
             <div className="profile_row_3">
               <div className="head_right">
-                <span className="profile_name">비비</span>
-                <span className="profile_type">배우•모델</span>
+                <span className="profile_name">{userList[id].name}</span>
+                <span className="profile_type">{userList[id].type}</span>
               </div>
               <div className="mid_right">
                 <div className="mid_con">
                   <div className="mid_icon">
-                    <img src="img/place.png" alt="place" />
+                    <img src="/img/place.png" alt="place" />
                   </div>
-                  <span className="icon_txt">서울</span>
+                  <span className="icon_txt">{userList[id].place}</span>
                 </div>
                 <div className="mid_con">
                   <div className="mid_icon">
-                    <img src="img/female.png" alt="place" />
+                    <img src="/img/female.png" alt="gender" />
                   </div>
-                  <span className="icon_txt">여성</span>
+                  <span className="icon_txt">{userList[id].gender}</span>
                 </div>
                 <div className="mid_con">
                   <div className="mid_icon">
-                    <img src="img/birth.png" alt="place" />
+                    <img src="/img/birth.png" alt="birth" />
                   </div>
-                  <span className="icon_txt">1998.07.25</span>
+                  <span className="icon_txt">{userList[id].birth}</span>
                 </div>
               </div>
               <div className="bot_right">
@@ -72,31 +86,48 @@ function Intro() {
                 <div className="body_info">
                   <li className="info_list">
                     <span className="info_list_left">HEIGHT</span>
-                    <span className="info_list_right">176cm</span>
+                    <span className="info_list_right">
+                      {userList[id].body.height}
+                    </span>
                   </li>
                   <li className="info_list">
                     <span className="info_list_left">BUST</span>
-                    <span className="info_list_right">32</span>
+                    <span className="info_list_right">
+                      {userList[id].body.bust}
+                    </span>
                   </li>
                   <li className="info_list">
                     <span className="info_list_left">SHOES</span>
-                    <span className="info_list_right">240mm</span>
+                    <span className="info_list_right">
+                      {userList[id].body.bust}
+                    </span>
                   </li>
                   <li className="info_list">
                     <span className="info_list_left">WAIST</span>
-                    <span className="info_list_right">23</span>
+                    <span className="info_list_right">
+                      {userList[id].body.waist}
+                    </span>
                   </li>
                   <li className="info_list">
                     <span className="info_list_left">HAIR</span>
-                    <span className="info_list_right">BLACK</span>
+                    <span className="info_list_right">
+                      {userList[id].body.hair}
+                    </span>
                   </li>
                   <li className="info_list">
                     <span className="info_list_left">HIP</span>
-                    <span className="info_list_right">35</span>
+                    <span className="info_list_right">
+                      {userList[id].body.hip}
+                    </span>
                   </li>
                 </div>
               </div>
-              <button type="button" className="sug_btn">
+              {isOpen && <Modal onClickModalHandler={onClickModalHandler} />}
+              <button
+                type="button"
+                className="sug_btn"
+                onClick={onClickModalHandler}
+              >
                 오디션 제안하기
               </button>
             </div>
