@@ -1,6 +1,7 @@
 .banner_con {
   position: relative;
-  height: 148px;
+  height: 334px;
+  background-color: #222222;
 }
 
 .banner_con > img {

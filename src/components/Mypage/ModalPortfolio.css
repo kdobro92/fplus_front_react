@@ -72,8 +72,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  padding: 0 60px 0 60px;
 }
 
 .flex_row_1 h3 {
@@ -128,6 +126,14 @@
 .body_info2_ul li span {
   flex: 1;
   color: #222222;
+}
+
+.body_info_3 {
+  margin-left: 12px;
+}
+
+.video1 {
+  margin-left: 12px;
 }
 
 .profile_video {
