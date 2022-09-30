@@ -1,18 +1,18 @@
 .wrap_side {
   position: relative;
-  display: flex;
   height: 100%;
+  border: 1px solid black;
 }
 
 .side_con {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
-  border-radius: 10px;
-  left: 68px;
-  top: -240px;
   position: absolute;
+  top: -240px;
+  left: 68px;
   width: 488px;
-  height: 1972px;
+  height: 1932px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .side_head {
@@ -172,6 +172,10 @@
   padding: 0 48px 0 48px;
 }
 
+.side_mid2_btn_con {
+  text-align: center;
+}
+
 .side_mid2_txt {
   font-weight: 700;
   font-size: 20px;
@@ -185,7 +189,6 @@
 
 .side_mid2 button {
   background-color: #ffffff;
-  padding-top: 30px;
   cursor: pointer;
   border: none;
 }

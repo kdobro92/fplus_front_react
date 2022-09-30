@@ -68,18 +68,24 @@ function Sidebar() {
             </button>
           </div>
           <div className="side_mid2">
-            <div className="side_mid2_txt">참여/수상경력</div>
-            <li>21</li>
-            <li>20</li>
-            <button type="button">
-              <img src="img/profile_arrow_down.png" alt="arrow" />
-            </button>
+            <div className="side_mid2_con">
+              <div className="side_mid2_txt">참여/수상경력</div>
+              <li>21</li>
+              <li>20</li>
+              <div className="side_mid2_btn_con">
+                <button type="button">
+                  <img src="img/profile_arrow_down.png" alt="arrow" />
+                </button>
+              </div>
+            </div>
             <div className="side_mid2_txt">대표작</div>
             <li>22</li>
             <li>21</li>
-            <button type="button">
-              <img src="img/profile_arrow_down.png" alt="arrow" />
-            </button>
+            <div className="side_mid2_btn_con">
+              <button type="button">
+                <img src="img/profile_arrow_down.png" alt="arrow" />
+              </button>
+            </div>
           </div>
           <div className="side_mid3">
             <h3 className="side_mid3_txt">영상</h3>
@@ -124,6 +130,7 @@ function Sidebar() {
             </div>
           </div>
         </div>
+
         <Content />
       </div>
     </div>

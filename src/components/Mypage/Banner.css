@@ -1,12 +1,12 @@
 .banner_con {
-  position: relative;
+  /* position: relative; */
   height: 334px;
   background-color: #222222;
 }
 
 .banner_con > img {
   width: 100%;
-  height: 148px;
+  height: 100%;
 }
 
 .user_profile_list {
