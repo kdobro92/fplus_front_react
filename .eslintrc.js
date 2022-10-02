@@ -23,11 +23,11 @@ module.exports = {
     ],
   },
 
-  // settings: {
-  //   resolver: {
-  //     node: {
-  //       paths: ['src'],
-  //     },
-  //   },
-  // },
+  settings: {
+    resolver: {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
 };
