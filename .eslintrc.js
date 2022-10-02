@@ -24,10 +24,14 @@ module.exports = {
   },
 
   settings: {
-    resolver: {
+    'import/resolver': {
       node: {
         paths: ['src'],
       },
     },
+  },
+  globals: {
+    window: true,
+    document: true,
   },
 };
